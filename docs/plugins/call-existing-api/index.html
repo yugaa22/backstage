@@ -119,7 +119,7 @@ easily add proxy routes to downstream APIs.</p>
 </code></pre>
 <pre><code class="hljs css language-ts"><span class="hljs-comment">// Inside your component</span>
 <span class="hljs-keyword">const</span> backendUrl = config.getString(<span class="hljs-string">'backend.baseUrl'</span>);
-fetch(<span class="hljs-string">`<span class="hljs-subst">${backendUrl}</span>/proxy/frobs/list`</span>)
+fetch(<span class="hljs-string">`<span class="hljs-subst">${backendUrl}</span>/api/proxy/frobs/list`</span>)
   .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> response.json())
   .then(<span class="hljs-function"><span class="hljs-params">payload</span> =&gt;</span> setFrobs(payload <span class="hljs-keyword">as</span> Frob[]));
 </code></pre>
