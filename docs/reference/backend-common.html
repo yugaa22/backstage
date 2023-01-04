@@ -48,6 +48,7 @@
 <tr><td><a href="/docs/reference/backend-common.getvoidlogger">getVoidLogger()</a></td><td>A logger that just throws away all messages.</td></tr>
 <tr><td><a href="/docs/reference/backend-common.isdatabaseconflicterror">isDatabaseConflictError(e)</a></td><td>Tries to deduce whether a thrown error is a database conflict.</td></tr>
 <tr><td><a href="/docs/reference/backend-common.loadbackendconfig">loadBackendConfig(options)</a></td><td><p>Load configuration for a Backend.</p><p>This function should only be called once, during the initialization of the backend.</p></td></tr>
+<tr><td><a href="/docs/reference/backend-common.loggertowinstonlogger">loggerToWinstonLogger(logger, opts)</a></td><td></td></tr>
 <tr><td><a href="/docs/reference/backend-common.notfoundhandler">notFoundHandler()</a></td><td><p>Express middleware to handle requests for missing routes.</p><p>Should be used as the very last handler in the chain, as it unconditionally returns a 404 status.</p></td></tr>
 <tr><td><a href="/docs/reference/backend-common.redactwinstonlogline">redactWinstonLogLine(info)</a></td><td>A winston formatting function that finds occurrences of filteredKeys and replaces them with the corresponding identifier.</td></tr>
 <tr><td><a href="/docs/reference/backend-common.requestlogginghandler">requestLoggingHandler(logger)</a></td><td>Logs incoming requests.</td></tr>
