@@ -106,6 +106,10 @@ with <code>--no-docker</code> flag.</p>
 a Backstage app server on port 3000. The Backstage app has a custom TechDocs API
 implementation, which uses the MkDocs preview server as a proxy to fetch the
 generated documentation files and assets.</p>
+<p>Backstage instances might differ from the provided preview app in appearance and
+behavior. To preview documentation with a different app, use
+<code>--preview-app-bundle-path</code> with a path to the bundle of the app to use instead.
+Typically, a <code>dist</code> or <code>build</code> directory.</p>
 <p>NOTE: When using a custom <code>techdocs</code> docker image, make sure the entry point is
 also <code>ENTRYPOINT [&quot;mkdocs&quot;]</code> or override with <code>--docker-entrypoint</code>.</p>
 <p>Command reference:</p>
@@ -114,14 +118,17 @@ also <code>ENTRYPOINT [&quot;mkdocs&quot;]</code> or override with <code>--docke
 Serve a documentation project locally <span class="hljs-keyword">in</span> a Backstage app-like environment
 
 Options:
-  -i, --docker-image &lt;DOCKER_IMAGE&gt;        The mkdocs docker container to use (default: <span class="hljs-string">"spotify/techdocs"</span>)
-  --docker-entrypoint &lt;DOCKER_ENTRYPOINT&gt;  Override the image entrypoint
-  --docker-option &lt;DOCKER_OPTION...&gt;       Extra options to pass to the docker run <span class="hljs-built_in">command</span>, e.g. <span class="hljs-string">"--add-host=internal.host:192.168.11.12"</span>
-                                           (can be added multiple <span class="hljs-built_in">times</span>).
-  --no-docker                              Do not use Docker, use MkDocs executable <span class="hljs-keyword">in</span> current user environment.
-  --mkdocs-port &lt;PORT&gt;                     Port <span class="hljs-keyword">for</span> MkDocs server to use (default: <span class="hljs-string">"8000"</span>)
-  -v --verbose                             Enable verbose output. (default: <span class="hljs-literal">false</span>)
-  -h, --<span class="hljs-built_in">help</span>                               display <span class="hljs-built_in">help</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">command</span>
+  -i, --docker-image &lt;DOCKER_IMAGE&gt;           The mkdocs docker container to use (default: <span class="hljs-string">"spotify/techdocs"</span>)
+  --docker-entrypoint &lt;DOCKER_ENTRYPOINT&gt;     Override the image entrypoint
+  --docker-option &lt;DOCKER_OPTION...&gt;          Extra options to pass to the docker run <span class="hljs-built_in">command</span>, e.g. <span class="hljs-string">"--add-host=internal.host:192.168.11.12"</span>
+                                              (can be added multiple <span class="hljs-built_in">times</span>).
+  --no-docker                                 Do not use Docker, use MkDocs executable <span class="hljs-keyword">in</span> current user environment.
+  --mkdocs-port &lt;PORT&gt;                        Port <span class="hljs-keyword">for</span> MkDocs server to use (default: <span class="hljs-string">"8000"</span>)
+  --preview-app-bundle-path &lt;PATH_TO_BUNDLE&gt;  Preview documentation using a web app other than the included one.
+  --preview-app-port &lt;PORT&gt;                   Port <span class="hljs-built_in">where</span> the preview will be served.
+                                              Can only be used with <span class="hljs-string">"--preview-app-bundle-path"</span>. (default: <span class="hljs-string">"3000"</span>)
+  -v --verbose                                Enable verbose output. (default: <span class="hljs-literal">false</span>)
+  -h, --<span class="hljs-built_in">help</span>                                  display <span class="hljs-built_in">help</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">command</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="generate-techdocs-site-from-a-documentation-project"></a><a href="#generate-techdocs-site-from-a-documentation-project" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generate TechDocs site from a documentation project</h3>
 <pre><code class="hljs css language-bash">techdocs-cli generate
