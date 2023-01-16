@@ -20,11 +20,12 @@
     deps: {
         [key <span class="hljs-keyword">in</span> <span class="hljs-built_in">string</span>]: ServiceRef&lt;unknown&gt;;
     };
+    createRootContext?(deps: {
+        [key <span class="hljs-keyword">in</span> <span class="hljs-built_in">string</span>]: unknown;
+    }): <span class="hljs-built_in">Promise</span>&lt;unknown&gt;;
     factory(deps: {
         [key <span class="hljs-keyword">in</span> <span class="hljs-built_in">string</span>]: unknown;
-    }): <span class="hljs-built_in">Promise</span>&lt;(deps: {
-        [key <span class="hljs-keyword">in</span> <span class="hljs-built_in">string</span>]: unknown;
-    }) =&gt; <span class="hljs-built_in">Promise</span>&lt;TService&gt;&gt;;
+    }, context: unknown): <span class="hljs-built_in">Promise</span>&lt;TService&gt;;
 };
 </code></pre>
 <p><b>References:</b> <a href="/docs/reference/backend-plugin-api.serviceref">ServiceRef</a></p>
