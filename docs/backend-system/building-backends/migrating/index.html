@@ -315,8 +315,7 @@ mechanism to extend or tweak the functionality of the plugin. To do that,
 you'll make your own bespoke <a href="/docs/backend-system/architecture/modules">module</a> which
 depends on the appropriate extension point and interacts with it.</p>
 <pre><code class="hljs css language-diff"> // packages/backend/src/index.ts
- // TODO: This might be moved to @backstage/plugin-scaffolder-node
-<span class="hljs-addition">+import { scaffolderActionsExtensionPoint } from '@backstage/plugin-scaffolder-backend/alpha';</span>
+<span class="hljs-addition">+import { scaffolderActionsExtensionPoint } from '@backstage/plugin-scaffolder-node';</span>
 <span class="hljs-addition">+import { createBackendModule } from '@backstage/backend-plugin-api';</span>
 
 <span class="hljs-addition">+const scaffolderExtensionsModule = createBackendModule({</span>
