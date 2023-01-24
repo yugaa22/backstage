@@ -14,16 +14,14 @@ system, see <a href="/docs/backend-system/building-backends/migrating">migrating
 <pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { createBackend } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-defaults'</span>;
 <span class="hljs-keyword">import</span> { appPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-app-backend'</span>;
 <span class="hljs-keyword">import</span> { catalogPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-catalog-backend'</span>;
-<span class="hljs-keyword">import</span> {
-  scaffolderPlugin,
-  catalogModuleTemplateKind,
-} <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder-backend'</span>;
+<span class="hljs-keyword">import</span> { scaffolderCatalogModule } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder-backend'</span>;
+<span class="hljs-keyword">import</span> { scaffolderPlugin } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-scaffolder-backend'</span>;
 
 <span class="hljs-keyword">const</span> backend = createBackend();
 
 backend.add(appPlugin());
 backend.add(catalogPlugin());
-backend.add(catalogModuleTemplateKind());
+backend.add(scaffolderCatalogModule());
 backend.add(scaffolderPlugin());
 
 backend.start();
@@ -95,7 +93,7 @@ backend.start();
 
 backend.add(appPlugin());
 backend.add(catalogPlugin());
-backend.add(catalogModuleTemplateKind());
+backend.add(scaffolderCatalogModule());
 backend.start();
 </code></pre>
 <p>And <code>backend-b</code>, don't forget to clean up dependencies in <code>package.json</code> as well:</p>

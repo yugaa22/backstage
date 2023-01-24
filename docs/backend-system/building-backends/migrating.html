@@ -194,11 +194,11 @@ typically found in your <code>packages/app</code> folder. By default it's just p
 <p>A basic installation of the catalog plugin looks as follows.</p>
 <pre><code class="hljs css language-diff"> // packages/backend/src/index.ts
 <span class="hljs-addition">+import { catalogPlugin } from '@backstage/plugin-catalog-backend';</span>
-<span class="hljs-addition">+import { catalogModuleTemplateKind } from '@backstage/plugin-scaffolder-backend';</span>
+<span class="hljs-addition">+import { scaffolderCatalogModule } from '@backstage/plugin-scaffolder-backend';</span>
 
  const backend = createBackend();
 <span class="hljs-addition">+backend.add(catalogPlugin());</span>
-<span class="hljs-addition">+backend.add(catalogModuleTemplateKind());</span>
+<span class="hljs-addition">+backend.add(scaffolderCatalogModule());</span>
 </code></pre>
 <p>Note that this also installs a module from the scaffolder, namely the one which
 enables the use of the <code>Template</code> kind. In the unlikely event that you do not
@@ -214,9 +214,9 @@ depends on the appropriate extension point and interacts with it.</p>
 <span class="hljs-addition">+import { catalogProcessingExtensionPoint } from '@backstage/plugin-catalog-node';</span>
 <span class="hljs-addition">+import { createBackendModule } from '@backstage/backend-plugin-api';</span>
 
-<span class="hljs-addition">+const catalogModuleCustomExtensions = createBackendModule({</span>
-<span class="hljs-addition">+  pluginId: 'catalog',  // name of the plugin that the module is targeting</span>
-<span class="hljs-addition">+  moduleId: 'customExtensions',</span>
+<span class="hljs-addition">+const catalogExtensionsModule = createBackendModule({</span>
+<span class="hljs-addition">+  pluginId: 'catalog',    // name of the plugin that the module is targeting</span>
+<span class="hljs-addition">+  moduleId: 'extensions', // you can choose this one freely</span>
 <span class="hljs-addition">+  register(env) {</span>
 <span class="hljs-addition">+    env.registerInit({</span>
 <span class="hljs-addition">+      deps: {</span>
@@ -235,8 +235,8 @@ depends on the appropriate extension point and interacts with it.</p>
 
  const backend = createBackend();
  backend.add(catalogPlugin());
- backend.add(catalogModuleTemplateKind());
-<span class="hljs-addition">+backend.add(catalogModuleCustomExtensions());</span>
+ backend.add(scaffolderCatalogModule());
+<span class="hljs-addition">+backend.add(catalogExtensionsModule());</span>
 </code></pre>
 <p>This also requires that you have a dependency on the corresponding node package,
 if you didn't already have one.</p>
@@ -267,9 +267,9 @@ depends on the appropriate extension point and interacts with it.</p>
 <span class="hljs-addition">+import { eventsExtensionPoint } from '@backstage/plugin-events-node';</span>
 <span class="hljs-addition">+import { createBackendModule } from '@backstage/backend-plugin-api';</span>
 
-<span class="hljs-addition">+const eventsModuleCustomExtensions = createBackendModule({</span>
-<span class="hljs-addition">+  pluginId: 'events',  // name of the plugin that the module is targeting</span>
-<span class="hljs-addition">+  moduleId: 'customExtensions',</span>
+<span class="hljs-addition">+const eventsExtensionsModule = createBackendModule({</span>
+<span class="hljs-addition">+  pluginId: 'events',     // name of the plugin that the module is targeting</span>
+<span class="hljs-addition">+  moduleId: 'extensions', // you can choose this one freely</span>
 <span class="hljs-addition">+  register(env) {</span>
 <span class="hljs-addition">+    env.registerInit({</span>
 <span class="hljs-addition">+      deps: {</span>
@@ -287,7 +287,7 @@ depends on the appropriate extension point and interacts with it.</p>
 
  const backend = createBackend();
  backend.add(eventsPlugin());
-<span class="hljs-addition">+backend.add(eventsModuleCustomExtensions());</span>
+<span class="hljs-addition">+backend.add(eventsExtensionsModule());</span>
 </code></pre>
 <p>This also requires that you have a dependency on the corresponding node package,
 if you didn't already have one.</p>
@@ -318,9 +318,9 @@ depends on the appropriate extension point and interacts with it.</p>
 <span class="hljs-addition">+import { scaffolderActionsExtensionPoint } from '@backstage/plugin-scaffolder-node';</span>
 <span class="hljs-addition">+import { createBackendModule } from '@backstage/backend-plugin-api';</span>
 
-<span class="hljs-addition">+const scaffolderModuleCustomExtensions = createBackendModule({</span>
-<span class="hljs-addition">+  pluginId: 'scaffolder',  // name of the plugin that the module is targeting</span>
-<span class="hljs-addition">+  moduleId: 'customExtensions',</span>
+<span class="hljs-addition">+const scaffolderExtensionsModule = createBackendModule({</span>
+<span class="hljs-addition">+  pluginId: 'scaffolder', // name of the plugin that the module is targeting</span>
+<span class="hljs-addition">+  moduleId: 'extensions', // you can choose this one freely</span>
 <span class="hljs-addition">+  register(env) {</span>
 <span class="hljs-addition">+    env.registerInit({</span>
 <span class="hljs-addition">+      deps: {</span>
@@ -338,7 +338,7 @@ depends on the appropriate extension point and interacts with it.</p>
 
  const backend = createBackend();
  backend.add(scaffolderPlugin());
-<span class="hljs-addition">+backend.add(scaffolderModuleCustomExtensions());</span>
+<span class="hljs-addition">+backend.add(scaffolderExtensionsModule());</span>
 </code></pre>
 <p>This also requires that you have a dependency on the corresponding node package,
 if you didn't already have one.</p>
