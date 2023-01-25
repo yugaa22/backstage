@@ -86,11 +86,7 @@ powered Docker images with real database engines to connect to.</p>
 <p>The base setup for such a test could look as follows:</p>
 <pre><code class="hljs css language-ts"><span class="hljs-comment">// MyDatabaseClass.test.ts</span>
 <span class="hljs-keyword">import</span> { TestDatabaseId, TestDatabases } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-test-utils'</span>;
-<span class="hljs-keyword">import</span> {
-  MyDatabaseClass,
-  applyDatabaseMigrations,
-  <span class="hljs-keyword">type</span> FooTableRow,
-} <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyDatabaseClass'</span>;
+<span class="hljs-keyword">import</span> { MyDatabaseClass, <span class="hljs-keyword">type</span> FooTableRow } <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyDatabaseClass'</span>;
 
 describe(<span class="hljs-string">'MyDatabaseClass'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
   <span class="hljs-comment">// Change this to the set of constants that you actually actively intend to</span>
