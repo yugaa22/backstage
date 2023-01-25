@@ -81,7 +81,6 @@ need to add a <em>location</em> pointing to your LDAP server</p>
 <p>Update the catalog plugin initialization in your backend to add the provider and
 schedule it:</p>
 <pre><code class="hljs css language-diff"> // packages/backend/src/plugins/catalog.ts
-<span class="hljs-addition">+import { Duration } from 'luxon';</span>
 <span class="hljs-addition">+import { LdapOrgEntityProvider } from '@backstage/plugin-catalog-backend-module-ldap';</span>
 
  export default async function createPlugin(
