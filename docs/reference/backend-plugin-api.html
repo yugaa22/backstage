@@ -33,8 +33,10 @@
 <tbody>
 <tr><td><a href="/docs/reference/backend-plugin-api.backendfeature">BackendFeature</a></td><td></td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.backendmoduleconfig">BackendModuleConfig</a></td><td>The configuration options passed to <a href="/docs/reference/backend-plugin-api.createbackendmodule">createBackendModule()</a><!-- -->.</td></tr>
+<tr><td><a href="/docs/reference/backend-plugin-api.backendmoduleregistrationpoints">BackendModuleRegistrationPoints</a></td><td>The callbacks passed to the <code>register</code> method of a backend module.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.backendpluginconfig">BackendPluginConfig</a></td><td>The configuration options passed to <a href="/docs/reference/backend-plugin-api.createbackendplugin">createBackendPlugin()</a><!-- -->.</td></tr>
-<tr><td><a href="/docs/reference/backend-plugin-api.backendregistrationpoints">BackendRegistrationPoints</a></td><td></td></tr>
+<tr><td><a href="/docs/reference/backend-plugin-api.backendpluginregistrationpoints">BackendPluginRegistrationPoints</a></td><td>The callbacks passed to the <code>register</code> method of a backend plugin.</td></tr>
+<tr><td><a href="/docs/reference/backend-plugin-api.backendregistrationpoints">BackendRegistrationPoints</a></td><td>The callbacks passed to the <code>register</code> method of a backend feature; this is essentially a superset of <a href="/docs/reference/backend-plugin-api.backendpluginregistrationpoints">BackendPluginRegistrationPoints</a> and <a href="/docs/reference/backend-plugin-api.backendmoduleregistrationpoints">BackendModuleRegistrationPoints</a><!-- -->.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.cacheclient">CacheClient</a></td><td>A pre-configured, storage agnostic cache client suitable for use by Backstage plugins.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.cacheservice">CacheService</a></td><td>Manages access to cache stores that plugins get.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.configservice">ConfigService</a></td><td></td></tr>
