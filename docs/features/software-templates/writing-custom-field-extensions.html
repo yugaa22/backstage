@@ -82,7 +82,7 @@ the <code>Scaffolder</code> frontend plugin in your own <code>App.tsx</code>.</p
 <span class="hljs-comment">/*
  This is the actual component that will get rendered in the form
 */</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ValidateKebabCaseExtension = ({
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ValidateKebabCase = ({
   onChange,
   rawErrors,
   required,
@@ -141,7 +141,7 @@ the <code>Scaffolder</code> frontend plugin in your own <code>App.tsx</code>.</p
 <span class="hljs-keyword">import</span> {
   ValidateKebabCase,
   validateKebabCaseValidation,
-} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ValidateKebabCase'</span>;
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'./ValidateKebabCase/ValidateKebabCaseExtension'</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ValidateKebabCaseFieldExtension = scaffolderPlugin.provide(
   createScaffolderFieldExtension({
@@ -204,7 +204,7 @@ extension to the <code>scaffolder</code> plugin.</p>
           <span class="hljs-attr">title:</span> <span class="hljs-string">Name</span>
           <span class="hljs-attr">type:</span> <span class="hljs-string">string</span>
           <span class="hljs-attr">description:</span> <span class="hljs-string">My</span> <span class="hljs-string">custom</span> <span class="hljs-string">name</span> <span class="hljs-string">for</span> <span class="hljs-string">the</span> <span class="hljs-string">component</span>
-          <span class="hljs-attr">ui:field:</span> <span class="hljs-string">ValidateKebabCaseExtension</span>
+          <span class="hljs-attr">ui:field:</span> <span class="hljs-string">ValidateKebabCase</span>
   <span class="hljs-attr">steps:</span>
   <span class="hljs-string">[...]</span>
 </code></pre>
