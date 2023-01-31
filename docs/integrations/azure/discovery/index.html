@@ -89,6 +89,11 @@ DevOps Server you'll find this information in your Collection Settings.</p>
           <span class="hljs-attr">frequency:</span> <span class="hljs-string">{</span> <span class="hljs-attr">minutes:</span> <span class="hljs-number">30</span> <span class="hljs-string">}</span>
           <span class="hljs-comment"># supports ISO duration, "human duration" as used in code</span>
           <span class="hljs-attr">timeout:</span> <span class="hljs-string">{</span> <span class="hljs-attr">minutes:</span> <span class="hljs-number">3</span> <span class="hljs-string">}</span>
+      <span class="hljs-attr">yourSecondProviderId:</span> <span class="hljs-comment"># identifies your dataset / provider independent of config changes</span>
+        <span class="hljs-attr">organization:</span> <span class="hljs-string">myorg</span>
+        <span class="hljs-attr">project:</span> <span class="hljs-string">'*'</span> <span class="hljs-comment"># this will match all projects</span>
+        <span class="hljs-attr">repository:</span> <span class="hljs-string">'*'</span> <span class="hljs-comment"># this will match all repos</span>
+        <span class="hljs-attr">path:</span> <span class="hljs-string">/catalog-info.yaml</span>
       <span class="hljs-attr">anotherProviderId:</span> <span class="hljs-comment"># another identifier</span>
         <span class="hljs-attr">organization:</span> <span class="hljs-string">myorg</span>
         <span class="hljs-attr">project:</span> <span class="hljs-string">myproject</span>
@@ -103,7 +108,7 @@ DevOps Server you'll find this information in your Collection Settings.</p>
 <ul>
 <li><strong><code>host:</code></strong> <em>(optional)</em> Leave empty for Cloud hosted, otherwise set to your self-hosted instance host.</li>
 <li><strong><code>organization:</code></strong> Your Organization slug (or Collection for on-premise users). Required.</li>
-<li><strong><code>project:</code></strong> Your project slug. Required.</li>
+<li><strong><code>project:</code></strong> <em>(optional)</em> Your project slug. Wildcards are supported as show on the examples above. If not set, all projects will be searched.</li>
 <li><strong><code>repository:</code></strong> <em>(optional)</em> The repository name. Wildcards are supported as show on the examples above. If not set, all repositories will be searched.</li>
 <li><strong><code>path:</code></strong> <em>(optional)</em> Where to find catalog-info.yaml files. Defaults to /catalog-info.yaml.</li>
 <li><strong><code>schedule</code></strong> <em>(optional)</em>:
@@ -173,7 +178,7 @@ const builder = await CatalogBuilder.create(env);
 <ul>
 <li>The base instance URL, <code>https://dev.azure.com</code> in this case</li>
 <li>The organization name which is required, <code>myorg</code> in this case</li>
-<li>The project name which is required, <code>myproject</code> in this case</li>
+<li>The project name which is optional, <code>myproject</code> in this case. This defaults to *, which scans all the projects where the token has access to.</li>
 <li>The repository blob to scan, which accepts * wildcard tokens and must be
 added after <code>_git/</code>. This can simply be <code>*</code> to scan all repositories in the
 project.</li>
