@@ -131,23 +131,23 @@ putting all extensions like this in a backend plugin package of their own in the
   <span class="hljs-keyword">private</span> readonly reader: UrlReader;
   <span class="hljs-keyword">private</span> connection?: EntityProviderConnection;
 
-  <span class="hljs-comment">/** [1] **/</span>
+  <span class="hljs-comment">/** [1] */</span>
   <span class="hljs-keyword">constructor</span>(<span class="hljs-params">env: <span class="hljs-built_in">string</span>, reader: UrlReader</span>) {
     <span class="hljs-keyword">this</span>.env = env;
     <span class="hljs-keyword">this</span>.reader = reader;
   }
 
-  <span class="hljs-comment">/** [2] **/</span>
+  <span class="hljs-comment">/** [2] */</span>
   getProviderName(): <span class="hljs-built_in">string</span> {
     <span class="hljs-keyword">return</span> <span class="hljs-string">`frobs-<span class="hljs-subst">${<span class="hljs-keyword">this</span>.env}</span>`</span>;
   }
 
-  <span class="hljs-comment">/** [3] **/</span>
+  <span class="hljs-comment">/** [3] */</span>
   <span class="hljs-keyword">async</span> connect(connection: EntityProviderConnection): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
     <span class="hljs-keyword">this</span>.connection = connection;
   }
 
-  <span class="hljs-comment">/** [4] **/</span>
+  <span class="hljs-comment">/** [4] */</span>
   <span class="hljs-keyword">async</span> run(): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">void</span>&gt; {
     <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.connection) {
       <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Not initialized'</span>);
@@ -158,10 +158,10 @@ putting all extensions like this in a backend plugin package of their own in the
     );
     <span class="hljs-keyword">const</span> data = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">await</span> response.buffer()).toString();
 
-    <span class="hljs-comment">/** [5] **/</span>
+    <span class="hljs-comment">/** [5] */</span>
     <span class="hljs-keyword">const</span> entities: Entity[] = frobsToEntities(data);
 
-    <span class="hljs-comment">/** [6] **/</span>
+    <span class="hljs-comment">/** [6] */</span>
     <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.connection.applyMutation({
       <span class="hljs-keyword">type</span>: <span class="hljs-string">'full'</span>,
       entities: entities.map(<span class="hljs-function"><span class="hljs-params">entity</span> =&gt;</span> ({
