@@ -72,7 +72,7 @@
 } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-plugin-api'</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> examplePlugin = createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -96,7 +96,7 @@
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> examplePlugin = createBackendPlugin(
   <span class="hljs-function">(<span class="hljs-params">options?: ExamplePluginOptions</span>) =&gt;</span> ({
-    id: <span class="hljs-string">'example'</span>,
+    pluginId: <span class="hljs-string">'example'</span>,
     register(env) {
       env.registerInit({
         deps: {

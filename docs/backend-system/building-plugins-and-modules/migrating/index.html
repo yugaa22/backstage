@@ -94,7 +94,7 @@
 <span class="hljs-keyword">import</span> { KubernetesBuilder } <span class="hljs-keyword">from</span> <span class="hljs-string">'./KubernetesBuilder'</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> kubernetesPlugin = createBackendPlugin({
-  id: <span class="hljs-string">'kubernetes'</span>,
+  pluginId: <span class="hljs-string">'kubernetes'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -135,7 +135,7 @@ backend.add(kubernetesPlugin);
 }
 
 <span class="hljs-keyword">const</span> kubernetesPlugin = createBackendPlugin(<span class="hljs-function">(<span class="hljs-params">options: KubernetesOptions</span>) =&gt;</span> ({
-  id: <span class="hljs-string">'kubernetes'</span>,
+  pluginId: <span class="hljs-string">'kubernetes'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -207,7 +207,7 @@ backend.add(kubernetesElasticContainerEngine());
 }
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> kubernetesPlugin = createBackendPlugin({
-  id: <span class="hljs-string">'kubernetes'</span>,
+  pluginId: <span class="hljs-string">'kubernetes'</span>,
   register(env) {
     <span class="hljs-keyword">const</span> extensionPoint = <span class="hljs-keyword">new</span> ClusterSupplier();
     <span class="hljs-comment">// We register the extension point with the backend, which allows modules to</span>

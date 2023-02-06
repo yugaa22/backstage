@@ -78,7 +78,7 @@ This single route will be available at the <code>/api/example/hello</code> path.
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: { http: coreServices.httpRouter },
@@ -121,7 +121,7 @@ createBackendPlugin({
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -181,7 +181,7 @@ createBackendPlugin({
 } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-plugin-api'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -229,7 +229,7 @@ createBackendPlugin({
 } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-plugin-api'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -289,7 +289,7 @@ createBackendPlugin({
 } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-plugin-api'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -320,7 +320,7 @@ createBackendPlugin({
 <span class="hljs-keyword">import</span> { resolvePackagePath } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-common'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -353,7 +353,7 @@ createBackendPlugin({
 <span class="hljs-keyword">import</span> { fetch } <span class="hljs-keyword">from</span> <span class="hljs-string">'node-fetch'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -378,7 +378,7 @@ createBackendPlugin({
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -436,7 +436,7 @@ createBackendPlugin({
 } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-plugin-api'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -522,7 +522,7 @@ createBackendPlugin({
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -565,7 +565,7 @@ createBackendPlugin({
 <span class="hljs-keyword">import</span> { fetch } <span class="hljs-keyword">from</span> <span class="hljs-string">'node-fetch'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {
@@ -597,7 +597,7 @@ createBackendPlugin({
 <span class="hljs-keyword">import</span> os <span class="hljs-keyword">from</span> <span class="hljs-string">'os'</span>;
 
 createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env) {
     env.registerInit({
       deps: {

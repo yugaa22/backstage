@@ -75,7 +75,7 @@
 </table>
 <p>Example:</p>
 <pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> catalogPlugin = createBackendPlugin({
-  id: <span class="hljs-string">'catalog'</span>,
+  pluginId: <span class="hljs-string">'catalog'</span>,
   ...
 })
 </code></pre>
@@ -90,7 +90,7 @@
 </tbody>
 </table>
 <p>Example:</p>
-<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> catalogModuleGithubEntityProvider = createBackendPlugin({
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> catalogModuleGithubEntityProvider = createBackendModule({
   pluginId: <span class="hljs-string">'catalog'</span>,
   moduleId: <span class="hljs-string">'githubEntityProvider'</span>,
   ...

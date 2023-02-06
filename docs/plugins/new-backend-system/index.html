@@ -54,7 +54,7 @@ backend.add(catalogPlugin());
 <span class="hljs-comment">// export type ExamplePluginOptions = { exampleOption: boolean };</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> examplePlugin = createBackendPlugin({
   <span class="hljs-comment">// unique id for the plugin</span>
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   <span class="hljs-comment">// It's possible to provide options to the plugin</span>
   <span class="hljs-comment">// register(env, options: ExamplePluginOptions) {</span>
   register(env) {
@@ -75,7 +75,7 @@ backend.add(catalogPlugin());
 </code></pre>
 <p>If we wanted our plugin to accept options as well, we'd accept the options as the second parameter of the register method:</p>
 <pre><code class="hljs css language-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> examplePlugin = createBackendPlugin({
-  id: <span class="hljs-string">'example'</span>,
+  pluginId: <span class="hljs-string">'example'</span>,
   register(env, options?: { silent?: <span class="hljs-built_in">boolean</span> }) {
     env.registerInit({
       deps: { logger: coreServices.logger },
