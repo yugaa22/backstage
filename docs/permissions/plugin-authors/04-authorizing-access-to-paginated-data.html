@@ -67,7 +67,7 @@
 <span class="hljs-deletion">-     res.json(getAll())</span>
 <span class="hljs-addition">+     const items = getAll();</span>
 <span class="hljs-addition">+     const decisions = await permissions.authorize(</span>
-<span class="hljs-addition">+       items.map(({ id }) =&gt; ({ permission: todosListRead, resourceRef: id })),</span>
+<span class="hljs-addition">+       items.map(({ id }) =&gt; ({ permission: todoListReadPermission, resourceRef: id })),</span>
 <span class="hljs-addition">+     );</span>
 
 <span class="hljs-addition">+     const filteredItems = decisions.filter(</span>
@@ -100,7 +100,7 @@
     resourceType: TODO_LIST_RESOURCE_TYPE,
   });
 <span class="hljs-addition">+</span>
-<span class="hljs-addition">+ export const todosListRead = createPermission({</span>
+<span class="hljs-addition">+ export const todoListReadPermission = createPermission({</span>
 <span class="hljs-addition">+   name: 'todos.list.read',</span>
 <span class="hljs-addition">+   attributes: { action: 'read' },</span>
 <span class="hljs-addition">+   resourceType: TODO_LIST_RESOURCE_TYPE,</span>
@@ -124,10 +124,9 @@
   import {
     todosListCreate,
     todosListUpdate,
-<span class="hljs-addition">+   todosListRead,</span>
+<span class="hljs-addition">+   todoListReadPermission,</span>
     TODO_LIST_RESOURCE_TYPE,
   } from './permissions';
-<span class="hljs-addition">+ import { rules } from './rules';</span>
 
 <span class="hljs-addition">+ const transformConditions: ConditionTransformer&lt;TodoFilter&gt; = createConditionTransformer(Object.values(rules));</span>
 
@@ -138,7 +137,7 @@
 <span class="hljs-addition">+   );</span>
 <span class="hljs-addition">+</span>
 <span class="hljs-addition">+   const decision = (</span>
-<span class="hljs-addition">+     await permissions.authorizeConditional([{ permission: todosListRead }], {</span>
+<span class="hljs-addition">+     await permissions.authorizeConditional([{ permission: todoListReadPermission }], {</span>
 <span class="hljs-addition">+       token,</span>
 <span class="hljs-addition">+     })</span>
 <span class="hljs-addition">+   )[0];</span>
@@ -153,14 +152,13 @@
 <span class="hljs-addition">+   } else {</span>
 <span class="hljs-addition">+     res.json(getAll());</span>
 <span class="hljs-addition">+   }</span>
-<span class="hljs-addition">+ }</span>
 <span class="hljs-deletion">-   res.json(getAll());</span>
   });
 </code></pre>
 <p>To make the process of handling conditional decisions easier, the permission framework provides a <code>createConditionTransformer</code> helper. This function accepts an array of permission rules, and returns a transformer function which converts the conditions to the format needed by the plugin using the <code>toQuery</code> method defined on each rule.</p>
 <p>Since <code>TodoFilter</code> used in our plugin matches the structure of the conditions object, we can directly pass the output of our condition transformer. If the filters were structured differently, we'd need to transform it further before passing it to the api.</p>
 <h2><a class="anchor" aria-hidden="true" id="test-the-authorized-read-endpoint"></a><a href="#test-the-authorized-read-endpoint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test the authorized read endpoint</h2>
-<p>Let's update our permission policy to return a conditional result whenever a <code>todosListRead</code> permission is received. In this case, we can reuse the decision returned for the <code>todosListCreate</code> permission.</p>
+<p>Let's update our permission policy to return a conditional result whenever a <code>todoListReadPermission</code> permission is received. In this case, we can reuse the decision returned for the <code>todosListCreate</code> permission.</p>
 <pre><code class="hljs css language-diff">// packages/backend/src/plugins/permission.ts
 
 ...
@@ -169,7 +167,6 @@ import {
   todoListCreatePermission,
   todoListUpdatePermission,
 <span class="hljs-addition">+ todoListReadPermission,</span>
-  TODO_LIST_RESOURCE_TYPE,
 } from '@internal/plugin-todo-list-common';
 
 ...

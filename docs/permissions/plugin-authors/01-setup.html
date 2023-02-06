@@ -90,7 +90,7 @@ $ <span class="hljs-string">yarn </span><span class="hljs-string">workspace </sp
 </span></code></pre></li>
 <li><p>Include the backend and frontend plugin in your application:</p>
 <p>Create a new <code>packages/backend/src/plugins/todolist.ts</code> with the following content:</p>
-<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { DefaultIdentityClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-auth-node'</span>;
+<pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { DefaultIdentityClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-auth-node'</span>;
 <span class="hljs-keyword">import</span> { createRouter } <span class="hljs-keyword">from</span> <span class="hljs-string">'@internal/plugin-todo-list-backend'</span>;
 <span class="hljs-keyword">import</span> { Router } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
 <span class="hljs-keyword">import</span> { PluginEnvironment } <span class="hljs-keyword">from</span> <span class="hljs-string">'../types'</span>;
@@ -101,9 +101,9 @@ $ <span class="hljs-string">yarn </span><span class="hljs-string">workspace </sp
 }: PluginEnvironment</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">Router</span>&gt; </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> createRouter({
     logger,
-    <span class="hljs-attr">identity</span>: DefaultIdentityClient.create({
+    identity: DefaultIdentityClient.create({
       discovery,
-      <span class="hljs-attr">issuer</span>: <span class="hljs-keyword">await</span> discovery.getExternalBaseUrl(<span class="hljs-string">'auth'</span>),
+      issuer: <span class="hljs-keyword">await</span> discovery.getExternalBaseUrl(<span class="hljs-string">'auth'</span>),
     }),
   });
 }

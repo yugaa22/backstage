@@ -104,7 +104,11 @@
 <span class="hljs-deletion">-           Add</span>
 <span class="hljs-deletion">-         &lt;/Button&gt;</span>
 <span class="hljs-addition">+         {!loadingPermission &amp;&amp; (</span>
-<span class="hljs-addition">+           &lt;Button disabled={!canAddTodo} variant="contained" onClick={handleAdd}&gt;</span>
+<span class="hljs-addition">+           &lt;Button</span>
+<span class="hljs-addition">+             disabled={!canAddTodo}</span>
+<span class="hljs-addition">+             variant="contained"</span>
+<span class="hljs-addition">+             onClick={() =&gt; onAdd(title.current)}</span>
+<span class="hljs-addition">+           &gt;</span>
 <span class="hljs-addition">+             Add</span>
 <span class="hljs-addition">+           &lt;/Button&gt;</span>
 <span class="hljs-addition">+         )}</span>
@@ -157,7 +161,10 @@
 <span class="hljs-deletion">-           &lt;Grid item&gt;</span>
 <span class="hljs-deletion">-             &lt;AddTodo onAdd={handleAdd} /&gt;</span>
 <span class="hljs-deletion">-           &lt;/Grid&gt;</span>
-<span class="hljs-addition">+           &lt;RequirePermission permission={todoListCreatePermission} errorPage={&lt;&gt;&lt;/&gt;}&gt;</span>
+<span class="hljs-addition">+           &lt;RequirePermission</span>
+<span class="hljs-addition">+             permission={todoListCreatePermission}</span>
+<span class="hljs-addition">+             errorPage={&lt;&gt;&lt;/&gt;}</span>
+<span class="hljs-addition">+           &gt;</span>
 <span class="hljs-addition">+             &lt;Grid item&gt;</span>
 <span class="hljs-addition">+               &lt;AddTodo onAdd={handleAdd} /&gt;</span>
 <span class="hljs-addition">+             &lt;/Grid&gt;</span>
@@ -188,11 +195,15 @@
             onChange={e =&gt; (title.current = e.target.value)}
           /&gt;
 <span class="hljs-deletion">-         {!loadingPermission &amp;&amp; (</span>
-<span class="hljs-deletion">-           &lt;Button disabled={!canAddTodo} variant="contained" onClick={handleAdd}&gt;</span>
+<span class="hljs-deletion">-           &lt;Button</span>
+<span class="hljs-deletion">-             disabled={!canAddTodo}</span>
+<span class="hljs-deletion">-             variant="contained"</span>
+<span class="hljs-deletion">-             onClick={() =&gt; onAdd(title.current)}</span>
+<span class="hljs-deletion">-           &gt;</span>
 <span class="hljs-deletion">-             Add</span>
 <span class="hljs-deletion">-           &lt;/Button&gt;</span>
 <span class="hljs-deletion">-         )}</span>
-<span class="hljs-addition">+         &lt;Button variant="contained" onClick={handleAdd}&gt;</span>
+<span class="hljs-addition">+         &lt;Button variant="contained" onClick={() =&gt; onAdd(title.current)}&gt;</span>
 <span class="hljs-addition">+           Add</span>
 <span class="hljs-addition">+         &lt;/Button&gt;</span>
         &lt;/Box&gt;
