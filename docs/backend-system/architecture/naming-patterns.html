@@ -126,7 +126,7 @@
 <tr><td>Interface</td><td><code>&lt;Name&gt;Service</code></td><td><code>LoggerService</code>, <code>DatabaseService</code></td></tr>
 <tr><td>Reference</td><td><code>&lt;name&gt;ServiceRef</code></td><td><code>loggerServiceRef</code>, <code>databaseServiceRef</code></td></tr>
 <tr><td>ID</td><td><code>&lt;pluginId&gt;.&lt;name&gt;</code></td><td><code>'core.rootHttpRouter'</code>, <code>'catalog.catalogClient'</code></td></tr>
-<tr><td>Factory</td><td><code>&lt;name&gt;Factory</code></td><td><code>loggerFactory</code>, <code>databaseFactory</code></td></tr>
+<tr><td>Factory</td><td><code>&lt;name&gt;ServiceFactory</code></td><td><code>loggerServiceFactory</code>, <code>databaseServiceFactory</code></td></tr>
 </tbody>
 </table>
 <p>Example:</p>
@@ -139,7 +139,7 @@
   ...
 })
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> catalogClientFactory = createServiceFactory({
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> catalogClientServiceFactory = createServiceFactory({
   service: catalogClientServiceRef,
   ...
 })

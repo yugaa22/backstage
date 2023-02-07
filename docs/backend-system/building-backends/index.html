@@ -98,11 +98,11 @@ backend.start();
 <p>There is a core set of services that must be installed in all backends, for things like logging, database access, serving HTTP, and so on. Luckily, all of these services are installed by default when you use <code>createBackend</code> from the <code>@backstage/backend-defaults</code> package, which is what you have in a standard setup.</p>
 <p>All of these services can be replaced with your own implementations if you need to customize them. The simplest way to do this is to use the existing service implementations but with additional options. Many of the core services can be customized this way, but not all, as they don't all have meaningful options.</p>
 <p>For example, let's say we want to customize the core configuration service to enable remote configuration loading. That would look something like this:</p>
-<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { configFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { configServiceFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
 
 <span class="hljs-keyword">const</span> backend = createBackend({
   services: [
-    configFactory({
+    configServiceFactory({
       remote: { reloadIntervalSeconds: <span class="hljs-number">60</span> },
     }),
   ],
@@ -171,11 +171,11 @@ backend.start();
 <p>A shared environment is defined using <code>createSharedEnvironment</code>. In this example we place it in a new and separate package called <code>backend-env</code>:</p>
 <pre><code class="hljs css language-ts"><span class="hljs-comment">// packages/backend-env/src/index.ts</span>
 <span class="hljs-keyword">import</span> { createSharedEnvironment } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-plugin-api'</span>;
-<span class="hljs-keyword">import</span> { customDiscoveryFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'./customDiscoveryFactory'</span>;
+<span class="hljs-keyword">import</span> { customDiscoveryServiceFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'./customDiscoveryServiceFactory'</span>;
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> env = createSharedEnvironment({
   services: [
-    customDiscoveryFactory(), <span class="hljs-comment">// custom DiscoveryService implementation</span>
+    customDiscoveryServiceFactory(), <span class="hljs-comment">// custom DiscoveryService implementation</span>
   ],
 });
 </code></pre>

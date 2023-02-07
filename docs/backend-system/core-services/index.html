@@ -100,11 +100,11 @@ createBackendPlugin({
 <li><code>getPath</code> - Can be used to generate a path for each plugin. Currently defaults to <code>/api/${pluginId}</code></li>
 </ul>
 <p>You can configure these additional options by adding an override for the core service when calling <code>createBackend</code> like follows:</p>
-<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { httpRouterFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { httpRouterServiceFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
 
 <span class="hljs-keyword">const</span> backend = createBackend({
   services: [
-    httpRouterFactory({
+    httpRouterServiceFactory({
       getPath: <span class="hljs-function">(<span class="hljs-params">pluginId: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-string">`/plugins/<span class="hljs-subst">${pluginId}</span>`</span>,
     }),
   ],
@@ -146,11 +146,11 @@ createBackendPlugin({
 <li><p><code>configure</code> - this is an optional function that you can use to configure the <code>express</code> instance. This is useful if you want to add your own middleware to the root router, such as logging, or other things that you want to do before the request is handled by the backend. It's also useful to override the order in which middleware is applied.</p></li>
 </ul>
 <p>You can configure the root HTTP Router service by passing the options to the <code>createBackend</code> function.</p>
-<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { rootHttpRouterFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { rootHttpRouterServiceFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
 
 <span class="hljs-keyword">const</span> backend = createBackend({
   services: [
-    rootHttpRouterFactory({
+    rootHttpRouterServiceFactory({
       configure: <span class="hljs-function">(<span class="hljs-params">{ app, middleware, routes, config, logger, lifecycle }</span>) =&gt;</span> {
         <span class="hljs-comment">// the built in middleware is provided through an option in the configure function</span>
         app.use(middleware.helmet());
@@ -203,11 +203,11 @@ createBackendPlugin({
 <li><code>remote</code> - Configure remote configuration loading</li>
 </ul>
 <p>You can configure these additional options by adding an override for the core service when calling <code>createBackend</code> like follows:</p>
-<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { configFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { configServiceFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
 
 <span class="hljs-keyword">const</span> backend = createBackend({
   services: [
-    configFactory({
+    configServiceFactory({
       argv: [
         <span class="hljs-string">'--config'</span>,
         <span class="hljs-string">'/backstage/app-config.development.yaml'</span>,
@@ -415,11 +415,11 @@ createBackendPlugin({
 <li><code>algorithms</code> - <code>alg</code> header for validation of the JWT token, defaults to <code>ES256</code>. More info on supported algorithms can be found in the <a href="https://github.com/panva/jose"><code>jose</code> library documentation</a></li>
 </ul>
 <p>You can configure these additional options by adding an override for the core service when calling <code>createBackend</code> like follows:</p>
-<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { identityFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { identityServiceFactory } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/backend-app-api'</span>;
 
 <span class="hljs-keyword">const</span> backend = createBackend({
   services: [
-    identityFactory({
+    identityServiceFactory({
       issuer: <span class="hljs-string">'backstage'</span>,
       algorithms: [<span class="hljs-string">'ES256'</span>, <span class="hljs-string">'RS256'</span>],
     }),
