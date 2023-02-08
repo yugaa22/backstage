@@ -265,10 +265,10 @@ environment is compatible with techdocs.</p>
 <p>You will have to install the <code>mkdocs</code> and <code>mkdocs-techdocs-core</code> package from
 pip, as well as <code>graphviz</code> and <code>plantuml</code> from your OS package manager (e.g.
 apt).</p>
-<p>You can do so by including the following lines in the last step of your
+<p>You can do so by including the following lines right above <code>USER node</code> of your
 <code>Dockerfile</code>:</p>
 <pre><code class="hljs css language-Dockerfile"><span class="hljs-keyword">RUN</span><span class="bash"> apt-get update &amp;&amp; apt-get install -y python3 python3-pip</span>
-<span class="hljs-keyword">RUN</span><span class="bash"> pip3 install mkdocs-techdocs-core==1.0.1</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> pip3 install mkdocs-techdocs-core==1.1.7</span>
 </code></pre>
 <p>Please be aware that the version requirement could change, you need to check our
 <a href="https://github.com/backstage/techdocs-container/blob/main/Dockerfile"><code>Dockerfile</code></a>
