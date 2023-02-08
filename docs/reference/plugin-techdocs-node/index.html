@@ -37,6 +37,7 @@
 <tbody>
 <tr><td><a href="/docs/reference/plugin-techdocs-node.getdocfilesfromrepository">getDocFilesFromRepository</a></td><td>Returns a preparer response <a href="/docs/reference/plugin-techdocs-node.preparerresponse">PreparerResponse</a></td></tr>
 <tr><td><a href="/docs/reference/plugin-techdocs-node.getlocationforentity">getLocationForEntity</a></td><td>Returns a entity reference based on the TechDocs annotation type</td></tr>
+<tr><td><a href="/docs/reference/plugin-techdocs-node.getmkdocsyml">getMkDocsYml</a></td><td>Finds and loads the contents of either an mkdocs.yml or mkdocs.yaml file, depending on which is present (MkDocs supports both as of v1.2.2).</td></tr>
 <tr><td><a href="/docs/reference/plugin-techdocs-node.parsereferenceannotation">parseReferenceAnnotation</a></td><td>Returns a parset locations annotation</td></tr>
 <tr><td><a href="/docs/reference/plugin-techdocs-node.transformdirlocation">transformDirLocation</a></td><td>TechDocs references of type <code>dir</code> are relative the source location of the entity. This function transforms relative references to absolute ones, based on the location the entity was ingested from. If the entity was registered by a <code>url</code> location, it returns a <code>url</code> location with a resolved target that points to the targeted subfolder. If the entity was registered by a <code>file</code> location, it returns an absolute <code>dir</code> location.</td></tr>
 </tbody>
