@@ -20,6 +20,7 @@
         identity: <span class="hljs-keyword">import</span>(<span class="hljs-string">"@backstage/backend-plugin-api"</span>).IdentityService;
     }, {
         logger: <span class="hljs-function">(<span class="hljs-params">log: <span class="hljs-keyword">import</span>(<span class="hljs-params">"@backstage/backend-plugin-api"</span>).LoggerService</span>) =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"winston"</span>).Logger;
+        cache: <span class="hljs-function">(<span class="hljs-params">cache: <span class="hljs-keyword">import</span>(<span class="hljs-params">"@backstage/backend-plugin-api"</span>).CacheService</span>) =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"./cache"</span>).PluginCacheManager;
     }&gt;&gt;;
 }&gt;) =&gt; <span class="hljs-keyword">import</span>(<span class="hljs-string">"@backstage/backend-plugin-api"</span>).BackendFeature
 </code></pre>

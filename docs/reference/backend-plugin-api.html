@@ -36,8 +36,7 @@
 <tr><td><a href="/docs/reference/backend-plugin-api.backendmoduleregistrationpoints">BackendModuleRegistrationPoints</a></td><td>The callbacks passed to the <code>register</code> method of a backend module.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.backendpluginconfig">BackendPluginConfig</a></td><td>The configuration options passed to <a href="/docs/reference/backend-plugin-api.createbackendplugin">createBackendPlugin()</a><!-- -->.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.backendpluginregistrationpoints">BackendPluginRegistrationPoints</a></td><td>The callbacks passed to the <code>register</code> method of a backend plugin.</td></tr>
-<tr><td><a href="/docs/reference/backend-plugin-api.cacheclient">CacheClient</a></td><td>A pre-configured, storage agnostic cache client suitable for use by Backstage plugins.</td></tr>
-<tr><td><a href="/docs/reference/backend-plugin-api.cacheservice">CacheService</a></td><td>Manages access to cache stores that plugins get.</td></tr>
+<tr><td><a href="/docs/reference/backend-plugin-api.cacheservice">CacheService</a></td><td>A pre-configured, storage agnostic cache service suitable for use by Backstage plugins.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.configservice">ConfigService</a></td><td></td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.databaseservice">DatabaseService</a></td><td>The DatabaseService manages access to databases that Plugins get.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.discoveryservice">DiscoveryService</a></td><td><p>The DiscoveryService is used to provide a mechanism for backend plugins to discover the endpoints for itself or other backend plugins.</p><p>The purpose of the discovery API is to allow for many different deployment setups and routing methods through a central configuration, instead of letting each individual plugin manage that configuration.</p><p>Implementations of the discovery API can be as simple as a URL pattern using the pluginId, but could also have overrides for individual plugins, or query a separate discovery service.</p></td></tr>
@@ -78,8 +77,8 @@
 <tr><th>Type Alias</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td><a href="/docs/reference/backend-plugin-api.cacheclientoptions">CacheClientOptions</a></td><td>Options given when constructing a <a href="/docs/reference/backend-plugin-api.cacheclient">CacheClient</a><!-- -->.</td></tr>
-<tr><td><a href="/docs/reference/backend-plugin-api.cacheclientsetoptions">CacheClientSetOptions</a></td><td>Options passed to <a href="/docs/reference/backend-plugin-api.cacheclient.set">CacheClient.set()</a><!-- -->.</td></tr>
+<tr><td><a href="/docs/reference/backend-plugin-api.cacheserviceoptions">CacheServiceOptions</a></td><td>Options passed to <a href="/docs/reference/backend-plugin-api.cacheservice.withoptions">CacheService.withOptions()</a><!-- -->.</td></tr>
+<tr><td><a href="/docs/reference/backend-plugin-api.cacheservicesetoptions">CacheServiceSetOptions</a></td><td>Options passed to <a href="/docs/reference/backend-plugin-api.cacheservice.set">CacheService.set()</a><!-- -->.</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.extensionpoint">ExtensionPoint</a></td><td>TODO</td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.lifecycleserviceshutdownhook">LifecycleServiceShutdownHook</a></td><td></td></tr>
 <tr><td><a href="/docs/reference/backend-plugin-api.readtreeoptions">ReadTreeOptions</a></td><td>An options object for <a href="/docs/reference/backend-plugin-api.urlreaderservice.readtree">UrlReaderService.readTree()</a> operations.</td></tr>
