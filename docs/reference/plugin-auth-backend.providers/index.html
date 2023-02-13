@@ -46,6 +46,17 @@
             userIdMatchingUserEntityAnnotation(): <span class="hljs-keyword">import</span>(<span class="hljs-string">"./types"</span>).SignInResolver&lt;<span class="hljs-keyword">import</span>(<span class="hljs-string">".."</span>).OAuthResult&gt;;
         }&gt;;
     }&gt;;
+    bitbucketServer: Readonly&lt;{
+        create: (options?: {
+            authHandler?: <span class="hljs-keyword">import</span>(<span class="hljs-string">"./types"</span>).AuthHandler&lt;<span class="hljs-keyword">import</span>(<span class="hljs-string">"./bitbucketServer"</span>).BitbucketServerOAuthResult&gt; | <span class="hljs-literal">undefined</span>;
+            signIn?: {
+                resolver: <span class="hljs-keyword">import</span>(<span class="hljs-string">"./types"</span>).SignInResolver&lt;<span class="hljs-keyword">import</span>(<span class="hljs-string">"./bitbucketServer"</span>).BitbucketServerOAuthResult&gt;;
+            } | <span class="hljs-literal">undefined</span>;
+        } | <span class="hljs-literal">undefined</span>) =&gt; AuthProviderFactory;
+        resolvers: Readonly&lt;{
+            emailMatchingUserEntityProfileEmail: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"./types"</span>).SignInResolver&lt;<span class="hljs-keyword">import</span>(<span class="hljs-string">"./bitbucketServer"</span>).BitbucketServerOAuthResult&gt;;
+        }&gt;;
+    }&gt;;
     cfAccess: Readonly&lt;{
         create: (options: {
             authHandler?: <span class="hljs-keyword">import</span>(<span class="hljs-string">"./types"</span>).AuthHandler&lt;<span class="hljs-keyword">import</span>(<span class="hljs-string">"./cloudflare-access"</span>).CloudflareAccessResult&gt; | <span class="hljs-literal">undefined</span>;
