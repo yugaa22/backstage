@@ -85,9 +85,10 @@
 <p>The <code>plugins</code> directory of your project should now include <code>todo-list</code>, <code>todo-list-backend</code>, and <code>todo-list-common</code>.</p>
 <p><strong>Important</strong>: if you are on <strong>Windows</strong>, make sure you have WSL and git installed on your machine before executing the script above.</p></li>
 <li><p>Add these packages as dependencies for your Backstage app:</p>
-<pre><code class="hljs">$ <span class="hljs-string">yarn </span><span class="hljs-string">workspace </span><span class="hljs-string">backend </span><span class="hljs-string">add </span>@<span class="hljs-string">internal/</span><span class="hljs-string">plugin-todo-</span><span class="hljs-built_in">list-backend</span> @<span class="hljs-string">internal/</span><span class="hljs-string">plugin-todo-</span><span class="hljs-built_in">list-common</span>
-$ <span class="hljs-string">yarn </span><span class="hljs-string">workspace </span><span class="hljs-string">app </span><span class="hljs-string">add </span>@<span class="hljs-string">internal/</span><span class="hljs-string">plugin-todo-</span><span class="hljs-string">list
-</span></code></pre></li>
+<pre><code class="hljs css language-sh"><span class="hljs-comment"># From your Backstage root directory</span>
+$ yarn add --cwd packages/backend @internal/plugin-todo-list-backend @internal/plugin-todo-list-common
+$ yarn add --cwd packages/app @internal/plugin-todo-list
+</code></pre></li>
 <li><p>Include the backend and frontend plugin in your application:</p>
 <p>Create a new <code>packages/backend/src/plugins/todolist.ts</code> with the following content:</p>
 <pre><code class="hljs css language-typescript"><span class="hljs-keyword">import</span> { DefaultIdentityClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'@backstage/plugin-auth-node'</span>;

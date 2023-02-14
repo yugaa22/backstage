@@ -72,7 +72,8 @@ plugin in this example, which is designed to show CI/CD pipeline information att
 to an entity in the software catalog.</p>
 <ol>
 <li><p>Add the plugin's npm package to the repo:</p>
-<pre><code class="hljs css language-bash">yarn workspace app add @backstage/plugin-circleci
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># From your Backstage root directory</span>
+yarn add --cwd packages/app @backstage/plugin-circleci
 </code></pre>
 <p>Note the plugin is added to the <code>app</code> package, rather than the root
 <code>package.json</code>. Backstage Apps are set up as monorepos with

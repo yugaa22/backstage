@@ -84,7 +84,8 @@
 <ol>
 <li>Add <code>@backstage/plugin-permission-backend</code> as a dependency of your Backstage backend:</li>
 </ol>
-<pre><code class="hljs css language-bash">$ yarn workspace backend add @backstage/plugin-permission-backend
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># From your Backstage root directory</span>
+$ yarn add --cwd packages/backend @backstage/plugin-permission-backend
 </code></pre>
 <ol start="2">
 <li>Add the following to a new file, <code>packages/backend/src/plugins/permission.ts</code>. This adds the permission-backend router, and configures it with a policy which allows everything.</li>
