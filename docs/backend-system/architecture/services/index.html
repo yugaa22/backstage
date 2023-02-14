@@ -60,7 +60,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/backend-system/architecture/03-services.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Backend Services</h1></header><article><div><span><blockquote>
-<p><strong>DISCLAIMER: The new backend system is under active development and is not considered stable</strong></p>
+<p><strong>DISCLAIMER: The new backend system is in alpha, and still under active development. While we have reviewed the interfaces carefully, they may still be iterated on before the stable release.</strong></p>
 </blockquote>
 <p>Backend services provide shared functionality available to all backend plugins and modules. They are made available through service references that embed a type that represents the service interface, similar to how <a href="/docs/api/utility-apis">Utility APIs</a> work in the Backstage frontend system. To use a service in your plugin or module you request an implementation of that service using the service reference.</p>
 <p>The system surrounding services exists to provide a level of indirection between the service interfaces and their implementation. It is an implementation of dependency injection, where each backend instance is the dependency injection container. The implementation for each service is provided by a service factory, which encapsulates the logic for how each service instance is created.</p>

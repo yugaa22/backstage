@@ -60,7 +60,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/backstage/backstage/edit/master/docs/backend-system/building-plugins-and-modules/08-migrating.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Migrating your Backend Plugin to the New Backend System</h1></header><article><div><span><blockquote>
-<p><strong>DISCLAIMER: The new backend system is under active development and is not considered stable</strong></p>
+<p><strong>DISCLAIMER: The new backend system is in alpha, and still under active development. While we have reviewed the interfaces carefully, they may still be iterated on before the stable release.</strong></p>
 </blockquote>
 <p>Migrating an existing backend plugin to the new backend system is fairly straightforward. The process is similar across the majority of plugins which just return a <code>Router</code> that is then wired up in the <code>index.ts</code> file of your backend. The primary thing that we need to do is to make sure that the dependencies that are required by the plugin are available, and then registering the router with the HTTP router service.</p>
 <p>Let's look at an example of migrating the Kubernetes backend plugin. In the existing (old) system, the kubernetes backend is structured like this:</p>
