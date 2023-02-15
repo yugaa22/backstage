@@ -2,12 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://backstage.io/blog</id>
     <title>Backstage Software Catalog and Developer Platform Blog</title>
-    <updated>2023-02-06T06:00:00.000Z</updated>
+    <updated>2023-02-15T06:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://backstage.io/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Backstage Software Catalog and Developer Platform news and events.</subtitle>
     <logo>https://backstage.io/undefined</logo>
     <rights>Copyright © 2023 Backstage Project Authors. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our Trademark Usage page: https://www.linuxfoundation.org/trademark-usage</rights>
+    <entry>
+        <title type="html"><![CDATA[Backstage Backend System Alpha]]></title>
+        <id>https://backstage.io/blog/2023/02/15/backend-system-alpha.html</id>
+        <link href="https://backstage.io/blog/2023/02/15/backend-system-alpha.html"/>
+        <updated>2023-02-15T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p><img src="/blog/assets/2023-02-15/backend-system-alpha.gif" alt="backend system alpha header image"></p>
+<p>For the past year, the Backstage maintainer team has been spending time to give the <a href="https://backstage.io/docs/plugins/backend-plugin">old Backstage backend system</a> a much needed revamp. Our goal was not to build something completely new from scratch, but rather to solidify the existing foundations that have grown organically. We wanted to make plugin installation a lot simpler, while maintaining and even improving the ways in which you can customize your backend setups.</p>
+<p>We’re happy to announce that the <a href="https://backstage.io/docs/releases/v1.11.0">v1.11</a> release includes the public alpha of the <a href="https://backstage.io/docs/backend-system/">new Backstage backend system</a>! The system has already been available to use for some time, as some of you have already found, but this alpha release marks the point where we are finally ready to encourage widespread adoption by plugin builders. We still don’t recommend that you use this new system in your production setups just yet, more on that later.</p>
+]]></summary>
+        <author>
+            <name>Patrik Oldsberg</name>
+            <uri>https://github.com/Rugvip</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[What’s Ahead in 2023?]]></title>
         <id>https://backstage.io/blog/2023/02/06/whats-ahead-in-2023.html</id>
