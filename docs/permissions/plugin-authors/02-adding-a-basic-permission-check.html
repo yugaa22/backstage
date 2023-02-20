@@ -139,7 +139,7 @@
   });
 </code></pre>
 <p>Pass the <code>permissions</code> object to the plugin in <code>packages/backend/src/plugins/todolist.ts</code>:</p>
-<pre><code class="hljs css language-diff">  import { IdentityClient } from '@backstage/plugin-auth-backend';
+<pre><code class="hljs css language-diff">  import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
   import { createRouter } from '@internal/plugin-todo-list-backend';
   import { Router } from 'express';
   import { PluginEnvironment } from '../types';
@@ -151,7 +151,7 @@
   }: PluginEnvironment): Promise&lt;Router&gt; {
     return await createRouter({
       logger,
-      identity: new IdentityClient({
+      identity: DefaultIdentityClient.create({
         discovery,
         issuer: await discovery.getExternalBaseUrl('auth'),
       }),
