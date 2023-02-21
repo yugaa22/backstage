@@ -160,9 +160,7 @@ to create your OAuth App. The <code>Homepage URL</code> should point to Backstag
 frontend, in our tutorial it would be <code>http://localhost:3000</code>. The
 <code>Authorization callback URL</code> will point to the auth backend, which will most
 likely be <code>http://localhost:7007/api/auth/github/handler/frame</code>.</p>
-<p align='center'>
-  <img src='../assets/getting-started/gh-oauth.png' alt='Screenshot of the GitHub OAuth creation page' />
-</p>
+<p><img src="../assets/getting-started/gh-oauth.png" alt="Screenshot of the GitHub OAuth creation page"></p>
 <p>Take note of the <code>Client ID</code> and the <code>Client Secret</code>. Open <code>app-config.yaml</code>,
 and add your <code>clientId</code> and <code>clientSecret</code> to this file. It should end up
 looking like this:</p>
@@ -224,9 +222,7 @@ Personal Access Token.</p>
 name to identify this token and put it in the notes field. Choose a number of
 days for expiration. If you have a hard time picking a number, we suggest to go
 for 7 days, it's a lucky number.</p>
-<p align='center'>
-  <img src='../assets/getting-started/gh-pat.png' alt='Screenshot of the GitHub Personal Access Token creation page' />
-</p>
+<p><img src="../assets/getting-started/gh-pat.png" alt="Screenshot of the GitHub Personal Access Token creation page"></p>
 <p>Set the scope to your likings. For this tutorial, selecting <code>repo</code> and <code>workflow</code> is required as the scaffolding job in this guide configures a GitHub actions workflow for the newly created project.</p>
 <p>For this tutorial, we will be writing the token to <code>app-config.local.yaml</code>. This file might not exist for you, so if it doesn't go ahead and create it alongside the <code>app-config.yaml</code> at the root of the project.
 This file should also be excluded in <code>.gitignore</code>, to avoid accidental committing of this file.</p>
@@ -256,42 +252,29 @@ profile. Hopefully you'll recognize the profile picture and name on your screen,
 otherwise something went terribly wrong.</p>
 <h2><a class="anchor" aria-hidden="true" id="register-an-existing-component"></a><a href="#register-an-existing-component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Register an existing component</h2>
 <ul>
-<li>Register a new component, by going to <code>create</code> and choose
-<code>Register existing component</code></li>
-</ul>
-<p align='center'>
-  <img data-zoomable src='../assets/getting-started/b-existing-1.png' alt='Software template main screen, with a blue button to add an existing component' />
-</p>
-<ul>
-<li>As URL use <code>https://github.com/backstage/demo/blob/master/catalog-info.yaml</code>.
-This is used by our <a href="https://demo.backstage.io">demo site</a>.</li>
-</ul>
-<p align='center'>
-  <img src='../assets/getting-started/b-existing-2.png' alt='Register a new component wizard, asking for an URL to the existing component YAML file' />
-</p>
-- Hit `Analyze` and review the changes. Apply them if correct
-<p align='center'>
-  <img src='../assets/getting-started/b-existing-3.png' alt='Register a new component wizard, showing the metadata for the component YAML we use in this tutorial' />
-</p>
-<ul>
-<li>You should receive a message that your entities have been added.</li>
-<li>If you go back to <code>Home</code>, you should be able to find <code>demo</code>. You should be
-able to click it and see the details</li>
+<li><p>Register a new component, by going to <code>create</code> and choose
+<code>Register existing component</code></p>
+  <!-- todo: Needs zoomable plugin -->
+<p><img src="../assets/getting-started/b-existing-1.png" alt="Software template main screen, with a blue button to add an existing component"></p></li>
+<li><p>As URL use <code>https://github.com/backstage/demo/blob/master/catalog-info.yaml</code>.
+This is used by our <a href="https://demo.backstage.io">demo site</a>.</p>
+<p><img src="../assets/getting-started/b-existing-2.png" alt="Register a new component wizard, asking for an URL to the existing component YAML file"></p></li>
+<li><p>Hit <code>Analyze</code> and review the changes. Apply them if correct.</p>
+<p><img src="../assets/getting-started/b-existing-3.png" alt="Register a new component wizard, showing the metadata for the component YAML we use in this tutorial"></p></li>
+<li><p>You should receive a message that your entities have been added.</p></li>
+<li><p>If you go back to <code>Home</code>, you should be able to find <code>demo</code>. You should be
+able to click it and see the details</p></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="create-a-new-component-using-a-software-template"></a><a href="#create-a-new-component-using-a-software-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a new component using a software template</h2>
 <ul>
 <li>Go to <code>create</code> and choose to create a website with the <code>Example Node.js Template</code></li>
 <li>Type in a name, let's use <code>tutorial</code> and click <code>Next Step</code></li>
 </ul>
-<p align='center'>
-  <img src='../assets/getting-started/b-scaffold-1.png' alt='Software template deployment input screen asking for a name' />
-</p>
+<p><img src="../assets/getting-started/b-scaffold-1.png" alt="Software template deployment input screen asking for a name"></p>
 <ul>
 <li>You should see the following screen:</li>
 </ul>
-<p align='center'>
-  <img src='../assets/getting-started/b-scaffold-2.png' alt='Software template deployment input screen asking for the GitHub username, and name of the new repo to create' />
-</p>
+<p><img src="../assets/getting-started/b-scaffold-2.png" alt="Software template deployment input screen asking for the GitHub username, and name of the new repo to create"></p>
 <ul>
 <li><p>For host, it should default to github.com</p></li>
 <li><p>As owner, type your GitHub username</p></li>

@@ -115,14 +115,12 @@ const routes = (
 <h4><a class="anchor" aria-hidden="true" id="4-update-sidebar-items"></a><a href="#4-update-sidebar-items" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Update sidebar items</h4>
 <p>Let's update the route for &quot;Home&quot; in the Backstage sidebar to point to the new homepage. We'll also add a Sidebar item to quickly open Catalog.</p>
 <table>
-  <tr>
-    <th><img data-zoomable src="../assets/getting-started/sidebar-without-catalog.png" alt="Sidebar without Catalog" /></th>
-    <th><img data-zoomable src="../assets/getting-started/sidebar-with-catalog.png" alt="Sidebar with Catalog" /></th>
-  </tr>
-  <tr align="center">
-    <td>Before</td>
-    <td>After</td>
-  </tr>
+<thead>
+<tr><th>Before</th><th>After</th></tr>
+</thead>
+<tbody>
+<tr><td><img src="../assets/getting-started/sidebar-without-catalog.png" alt="Sidebar without Catalog"></td><td><img src="../assets/getting-started/sidebar-with-catalog.png" alt="Sidebar with Catalog"></td></tr>
+</tbody>
 </table>
 <p>The code for the Backstage sidebar is most likely inside your <a href="https://github.com/backstage/backstage/blob/master/packages/app/src/components/Root/Root.tsx"><code>packages/app/src/components/Root/Root.tsx</code></a>.</p>
 <p>Let's make the following changes</p>
@@ -147,7 +145,8 @@ export const Root = ({ children }: PropsWithChildren&lt;{}&gt;) =&gt; (
         &lt;SidebarDivider /&gt;
 </code></pre>
 <p>That's it! You should now have <em>(although slightly boring)</em> a homepage!</p>
-<p><img data-zoomable src="../assets/getting-started/simple-homepage.png" alt="Screenshot of a blank homepage" /></p>
+<!-- todo: Needs zoomable plugin -->
+<p><img src="../assets/getting-started/simple-homepage.png" alt="Screenshot of a blank homepage"></p>
 <p>In the next steps, we will make it interesting and useful!</p>
 <h3><a class="anchor" aria-hidden="true" id="use-the-default-template"></a><a href="#use-the-default-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use the default template</h3>
 <p>There is a default homepage template (<a href="https://backstage.io/storybook/?path=/story/plugins-home-templates--default-template">storybook link</a>) which we will use to set up our homepage. Checkout the <a href="https://backstage.io/blog/2022/01/25/backstage-homepage-templates">blog post announcement</a> about the Backstage homepage templates for more information.</p>
