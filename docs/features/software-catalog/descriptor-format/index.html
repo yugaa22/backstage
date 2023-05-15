@@ -22,7 +22,7 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.d3c410df.css">
-<script src="/assets/js/runtime~main.1e61269b.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.da017077.js" defer="defer"></script>
 <script src="/assets/js/main.e74f4089.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -145,15 +145,15 @@ follows.</p>
 </ul>
 <p>Example: <code>visits-tracking-service</code>, <code>CircleciBuildsDumpV2_avro_gcs</code></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="namespace-optional"><code>namespace</code> [optional]<a href="#namespace-optional" class="hash-link" aria-label="Direct link to namespace-optional" title="Direct link to namespace-optional">​</a></h3>
-<p>The ID of a namespace that the entity belongs to. This is a string that follows
-the same format restrictions as <code>name</code> above.</p>
-<p>This field is optional, and currently has no special semantics apart from
-bounding the name uniqueness constraint if specified. It is reserved for future
-use and may get broader semantic implication later. For now, it is recommended
-to not specify a namespace unless you have specific need to do so. This means
-the entity belongs to the <code>&quot;default&quot;</code> namespace.</p>
-<p>Namespaces may also be part of the catalog, and are <code>v1</code> / <code>Namespace</code> entities,
-i.e. not Backstage specific but the same as in Kubernetes.</p>
+<p>The ID of a namespace that the entity belongs to. This field is optional, and
+currently has no special semantics apart from bounding the name uniqueness
+constraint if specified. It is reserved for future use and may get broader
+semantic implication later.</p>
+<p>For now, it is recommended to not specify a namespace unless you have specific
+need to do so. This means the entity belongs to the <code>&quot;default&quot;</code> namespace.</p>
+<p>Namespaces must be sequences of <code>[a-zA-Z0-9]</code>, possibly separated by <code>-</code>, at
+most 63 characters in total. Namespace names are case insensitive and will be rendered as lower case in most places.</p>
+<p>Example: <code>tracking-services</code>, <code>payment</code></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="uid-output"><code>uid</code> [output]<a href="#uid-output" class="hash-link" aria-label="Direct link to uid-output" title="Direct link to uid-output">​</a></h3>
 <p>Each entity gets an automatically generated globally unique ID when it first
 enters the database. This field is not meant to be specified as input data, but
