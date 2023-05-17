@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-local-dev/cli-build-system">
 <head>
 <meta charset="UTF-8">
-<meta name="generator" content="Docusaurus v0.0.0-5569">
+<meta name="generator" content="Docusaurus v0.0.0-5580">
 <title data-rh="true">Build System | Backstage Software Catalog and Developer Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://backstage.io/img/sharing-opengraph.png"><meta data-rh="true" name="twitter:image" content="https://backstage.io/img/sharing-opengraph.png"><meta data-rh="true" property="og:url" content="https://backstage.io/docs/local-dev/cli-build-system"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Build System | Backstage Software Catalog and Developer Platform"><meta data-rh="true" name="description" content="A deep dive into the Backstage build system"><meta data-rh="true" property="og:description" content="A deep dive into the Backstage build system"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://backstage.io/docs/local-dev/cli-build-system"><link data-rh="true" rel="alternate" href="https://backstage.io/docs/local-dev/cli-build-system" hreflang="en"><link data-rh="true" rel="alternate" href="https://backstage.io/docs/local-dev/cli-build-system" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://JCMFNHCHI8-dsn.algolia.net" crossorigin="anonymous"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Backstage Software Catalog and Developer Platform RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Backstage Software Catalog and Developer Platform Atom Feed">
 
@@ -22,8 +22,8 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.d3c410df.css">
-<script src="/assets/js/runtime~main.dc02e739.js" defer="defer"></script>
-<script src="/assets/js/main.008fdb8f.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.8c8309c9.js" defer="defer"></script>
+<script src="/assets/js/main.a4de15c7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}return t}()||function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"dark")}()</script><div id="__docusaurus">
@@ -97,6 +97,66 @@ role is a single string that identifies what the purpose of a package is, and it
 defined in the <code>package.json</code> of each package like this:</p>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#232323"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token property">&quot;name&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;my-package&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token property">&quot;backstage&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token property">&quot;role&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;&lt;role&gt;&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  ...</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>These are the available roles that are currently supported by the Backstage build system:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Role</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td>frontend</td><td>Bundled frontend application</td><td><code>packages/app</code></td></tr><tr><td>backend</td><td>Bundled backend application</td><td><code>packages/backend</code></td></tr><tr><td>cli</td><td>Package used as a command-line interface</td><td><code>@backstage/cli</code>, <code>@backstage/codemods</code></td></tr><tr><td>web-library</td><td>Web library for use by other packages</td><td><code>@backstage/plugin-catalog-react</code></td></tr><tr><td>node-library</td><td>Node.js library for use by other packages</td><td><code>@backstage/plugin-techdocs-node</code></td></tr><tr><td>common-library</td><td>Isomorphic library for use by other packages</td><td><code>@backstage/plugin-permission-common</code></td></tr><tr><td>frontend-plugin</td><td>Backstage frontend plugin</td><td><code>@backstage/plugin-scaffolder</code></td></tr><tr><td>frontend-plugin-module</td><td>Backstage frontend plugin module</td><td><code>@backstage/plugin-analytics-module-ga</code></td></tr><tr><td>backend-plugin</td><td>Backstage backend plugin</td><td><code>@backstage/plugin-auth-backend</code></td></tr><tr><td>backend-plugin-module</td><td>Backstage backend plugin module</td><td><code>@backstage/plugin-search-backend-module-pg</code></td></tr></tbody></table>
 <p>Most of the steps that we cover below have an accompanying command that is intended to be used as a package script. The commands are all available under the <code>backstage-cli package</code> category, and many of the commands will behave differently depending on the role of the package. The commands are intended to be used like this:</p>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#232323"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token property">&quot;scripts&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token property">&quot;start&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;backstage-cli package start&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token property">&quot;build&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;backstage-cli package build&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token property">&quot;lint&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;backstage-cli package lint&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    ...</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
@@ -126,6 +186,47 @@ that is determined based on the package role, but it can be customized to fit th
 <p>But you can provide custom overrides for each package using the optional second argument:</p>
 <div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#232323"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">module</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token property-access">exports</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">=</span><span class="token plain"> </span><span class="token function" style="color:rgb(220, 220, 170)">require</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;@backstage/cli/config/eslint-factory&#x27;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token plain">__dirname</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token literal-property property">ignorePatterns</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">[</span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;templates/&#x27;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">]</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token literal-property property">rules</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token string-property property">&#x27;jest/expect-expect&#x27;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;off&#x27;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>The configuration factory also provides utilities for extending the configuration in ways that are otherwise very cumbersome to do with plain ESLint, particularly for rules like <code>no-restricted-syntax</code>. These are the extra keys that are available:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody><tr><td><code>tsRules</code></td><td>Additional rules to apply to TypeScript files</td></tr><tr><td><code>testRules</code></td><td>Additional rules to apply to tests files</td></tr><tr><td><code>restrictedImports</code></td><td>Additional paths to add to <code>no-restricted-imports</code></td></tr><tr><td><code>restrictedSrcImports</code></td><td>Additional paths to add to <code>no-restricted-imports</code> in src files</td></tr><tr><td><code>restrictedTestImports</code></td><td>Additional paths to add to <code>no-restricted-imports</code> in test files</td></tr><tr><td><code>restrictedSyntax</code></td><td>Additional patterns to add to <code>no-restricted-syntax</code></td></tr><tr><td><code>restrictedSrcSyntax</code></td><td>Additional patterns to add to <code>no-restricted-syntax</code> in src files</td></tr><tr><td><code>restrictedTestSyntax</code></td><td>Additional patterns to add to <code>no-restricted-syntax</code> in test files</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="type-checking">Type Checking<a href="#type-checking" class="hash-link" aria-label="Direct link to Type Checking" title="Direct link to Type Checking">​</a></h2>
 <p>Just like formatting, the Backstage CLI does not have its own command for type
@@ -357,6 +458,126 @@ make the bundling anywhere from two to five times faster.</p>
 of the build system, including the bundling, tests, builds, and type checking.
 Loaders are always selected based on the file extension. The following is a list
 of all supported file extensions:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table><thead><tr><th>Extension</th><th>Exports</th><th>Purpose</th></tr></thead><tbody><tr><td><code>.ts</code></td><td>Script Module</td><td>TypeScript</td></tr><tr><td><code>.tsx</code></td><td>Script Module</td><td>TypeScript and XML</td></tr><tr><td><code>.js</code></td><td>Script Module</td><td>JavaScript</td></tr><tr><td><code>.jsx</code></td><td>Script Module</td><td>JavaScript and XML</td></tr><tr><td><code>.mjs</code></td><td>Script Module</td><td>ECMAScript Module</td></tr><tr><td><code>.cjs</code></td><td>Script Module</td><td>CommonJS Module</td></tr><tr><td><code>.json</code></td><td>JSON Data</td><td>JSON Data</td></tr><tr><td><code>.yml</code></td><td>JSON Data</td><td>YAML Data</td></tr><tr><td><code>.yaml</code></td><td>JSON Data</td><td>YAML Data</td></tr><tr><td><code>.css</code></td><td>classes</td><td>Style sheet</td></tr><tr><td><code>.eot</code></td><td>URL Path</td><td>Font</td></tr><tr><td><code>.ttf</code></td><td>URL Path</td><td>Font</td></tr><tr><td><code>.woff2</code></td><td>URL Path</td><td>Font</td></tr><tr><td><code>.woff</code></td><td>URL Path</td><td>Font</td></tr><tr><td><code>.bmp</code></td><td>URL Path</td><td>Image</td></tr><tr><td><code>.gif</code></td><td>URL Path</td><td>Image</td></tr><tr><td><code>.jpeg</code></td><td>URL Path</td><td>Image</td></tr><tr><td><code>.jpg</code></td><td>URL Path</td><td>Image</td></tr><tr><td><code>.png</code></td><td>URL Path</td><td>Image</td></tr><tr><td><code>.svg</code></td><td>URL Path</td><td>Image</td></tr><tr><td><code>.md</code></td><td>URL Path</td><td>Markdown File</td></tr><tr><td><code>.icon.svg</code></td><td>React Component</td><td>SVG converted into a <a href="https://mui.com/components/icons/#svgicon" target="_blank" rel="noopener noreferrer">MUI SvgIcon</a></td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="jest-configuration">Jest Configuration<a href="#jest-configuration" class="hash-link" aria-label="Direct link to Jest Configuration" title="Direct link to Jest Configuration">​</a></h2>
 <p>The Backstage CLI bundles its own Jest configuration file, which is used
@@ -445,10 +666,10 @@ project clean.</p>
 <p>In order for the experimental type build to work, <code>@microsoft/api-extractor</code> must be installed in your project, as it is an optional peer dependency of the Backstage CLI. There are then three steps that need to be taken for each package where you want to enable this feature:</p>
 <ul>
 <li>Add the <code>--experimental-type-build</code> flag to the <code>&quot;build&quot;</code> script of the package.</li>
-<li>Add either one or both of <code>&quot;alphaTypes&quot;</code> and <code>&quot;betaTypes&quot;</code> to the <code>&quot;publishConfig&quot;</code> of the package:<!-- -->
+<li>Add either one or both of <code>&quot;alphaTypes&quot;</code> and <code>&quot;betaTypes&quot;</code> to the <code>&quot;publishConfig&quot;</code> of the package:
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#232323"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token property">&quot;publishConfig&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  ...</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token property">&quot;types&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;dist/index.d.ts&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token property">&quot;alphaTypes&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;dist/index.alpha.d.ts&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token property">&quot;betaTypes&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;dist/index.beta.d.ts&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 </li>
-<li>Add either one or both of <code>&quot;alpha&quot;</code> and <code>&quot;beta&quot;</code> to the <code>&quot;files&quot;</code> of the package:<!-- -->
+<li>Add either one or both of <code>&quot;alpha&quot;</code> and <code>&quot;beta&quot;</code> to the <code>&quot;files&quot;</code> of the package:
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#232323"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token property">&quot;files&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;dist&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;alpha&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;beta&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 </li>
 </ul>
