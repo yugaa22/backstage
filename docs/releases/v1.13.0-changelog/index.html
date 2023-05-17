@@ -22,7 +22,7 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.d3c410df.css">
-<script src="/assets/js/runtime~main.e46994e8.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.7a3524f8.js" defer="defer"></script>
 <script src="/assets/js/main.a4de15c7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -31,7 +31,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="backstageapp-defaults130">@backstage/app-defaults@1.3.0<a href="#backstageapp-defaults130" class="hash-link" aria-label="Direct link to @backstage/app-defaults@1.3.0" title="Direct link to @backstage/app-defaults@1.3.0">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="minor-changes">Minor Changes<a href="#minor-changes" class="hash-link" aria-label="Direct link to Minor Changes" title="Direct link to Minor Changes">​</a></h3>
 <ul>
-<li>7908d72e033: Introduce a new global config parameter, <code>auth.enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</li>
+<li>7908d72e033: Introduce a new global config parameter, <code>enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="patch-changes">Patch Changes<a href="#patch-changes" class="hash-link" aria-label="Direct link to Patch Changes" title="Direct link to Patch Changes">​</a></h3>
 <ul>
@@ -97,7 +97,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="backstagecore-app-api170">@backstage/core-app-api@1.7.0<a href="#backstagecore-app-api170" class="hash-link" aria-label="Direct link to @backstage/core-app-api@1.7.0" title="Direct link to @backstage/core-app-api@1.7.0">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="minor-changes-4">Minor Changes<a href="#minor-changes-4" class="hash-link" aria-label="Direct link to Minor Changes" title="Direct link to Minor Changes">​</a></h3>
 <ul>
-<li>7908d72e033: Introduce a new global config parameter, <code>auth.enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</li>
+<li>7908d72e033: Introduce a new global config parameter, <code>enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</li>
 <li>c15e0cedbe1: The <code>AuthConnector</code> interface now supports specifying a set of scopes when
 refreshing a session. The <code>DefaultAuthConnector</code> implementation passes the
 <code>scope</code> query parameter to the auth-backend plugin appropriately. The
@@ -131,7 +131,7 @@ appropriately.</li>
 <li>67140d9f96f: Upgrade <code>react-virtualized-auto-sizer´ to version </code>^1.0.11`</li>
 <li>6e0b71493df: Switched internal declaration of <code>DependencyGraphTypes</code> to use <code>namespace</code>.</li>
 <li>c8779cc1d09: Updated <code>LogLine</code> component, which is used by the <code>LogViewer</code>, to turn URLs into clickable links. This feature is on by default</li>
-<li>7908d72e033: Introduce a new global config parameter, <code>auth.enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</li>
+<li>7908d72e033: Introduce a new global config parameter, <code>enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</li>
 <li>1e4f5e91b8e: Bump <code>zod</code> and <code>zod-to-json-schema</code> dependencies.</li>
 <li>29ba8267d69: Updated dependency <code>@material-ui/lab</code> to <code>4.0.0-alpha.61</code>.</li>
 <li>8e00acb28db: Small tweaks to remove warnings in the console during development (mainly focusing on techdocs)</li>
@@ -202,7 +202,7 @@ appropriately.</li>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="backstagetest-utils130">@backstage/test-utils@1.3.0<a href="#backstagetest-utils130" class="hash-link" aria-label="Direct link to @backstage/test-utils@1.3.0" title="Direct link to @backstage/test-utils@1.3.0">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="minor-changes-8">Minor Changes<a href="#minor-changes-8" class="hash-link" aria-label="Direct link to Minor Changes" title="Direct link to Minor Changes">​</a></h3>
 <ul>
-<li>7908d72e033: Introduce a new global config parameter, <code>auth.enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</li>
+<li>7908d72e033: Introduce a new global config parameter, <code>enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="patch-changes-8">Patch Changes<a href="#patch-changes-8" class="hash-link" aria-label="Direct link to Patch Changes" title="Direct link to Patch Changes">​</a></h3>
 <ul>
@@ -1368,7 +1368,7 @@ for all cases besides when the default branch has to be resolved and used
 <p>d8f774c30df: Enforce the secret visibility of certificates and client secrets in the auth backend. Also, document all known options for each auth plugin.</p>
 </li>
 <li>
-<p>7908d72e033: Introduce a new global config parameter, <code>auth.enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</p>
+<p>7908d72e033: Introduce a new global config parameter, <code>enableExperimentalRedirectFlow</code>. When enabled, auth will happen with an in-window redirect flow rather than through a popup window.</p>
 </li>
 <li>
 <p>475abd1dc3f: The <code>microsoft</code> (i.e. Azure) auth provider now supports negotiating tokens for
