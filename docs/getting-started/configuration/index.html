@@ -22,7 +22,7 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.d3c410df.css">
-<script src="/assets/js/runtime~main.6c46338a.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.e46994e8.js" defer="defer"></script>
 <script src="/assets/js/main.a4de15c7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -150,6 +150,9 @@ This file should also be excluded in <code>.gitignore</code>, to avoid accidenta
 <p>That&#x27;s settled. This information will be leveraged by other plugins.</p>
 <p>If you&#x27;re looking for a more production way to manage this secret, then you can do the following with the token being stored in an environment variable called <code>GITHUB_TOKEN</code>.</p>
 <div class="language-yaml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#232323"><div class="codeBlockTitle_Ktv7">app-config.local.yaml</div><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-yaml codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token key atrule">integrations</span><span class="token punctuation" style="color:rgb(212, 212, 212)">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token key atrule">github</span><span class="token punctuation" style="color:rgb(212, 212, 212)">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token punctuation" style="color:rgb(212, 212, 212)">-</span><span class="token plain"> </span><span class="token key atrule">host</span><span class="token punctuation" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> github.com</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">      </span><span class="token key atrule">token</span><span class="token punctuation" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> $</span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain">GITHUB_TOKEN</span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token plain"> </span><span class="token comment" style="color:rgb(106, 153, 85)"># this will use the environment variable GITHUB_TOKEN</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<blockquote>
+<p>Note: If you&#x27;ve updated the configuration for your integration, it&#x27;s likely that the backend will need a restart to apply these changes. To do this, stop the running instance in your terminal with <code>Control-C</code>, then start it again with <code>yarn dev</code>. Once the backend has restarted, retry the operation.</p>
+</blockquote>
 <p>Some helpful links, for if you want to learn more about:</p>
 <ul>
 <li><a href="/docs/integrations/">Other available integrations</a></li>
