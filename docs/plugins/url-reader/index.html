@@ -22,7 +22,7 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.0ffd8a10.css">
-<script src="/assets/js/runtime~main.df7a5aa9.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.7034c44c.js" defer="defer"></script>
 <script src="/assets/js/main.0942ba43.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -95,6 +95,14 @@ number of requests.</li>
 Catalog using the <code>search</code> method to find files for a location URL containing
 a glob pattern.</li>
 </ul>
+<p>Note that URL Readers which target git-based version control systems may, under
+the hood, leverage the ability to create tar archives based on a specific git
+commit-ish. A consequence of this is that files and directories configured with
+<a href="https://git-scm.com/docs/gitattributes#_creating_an_archive" target="_blank" rel="noopener noreferrer">the <code>export-ignore</code> attribute</a>
+via <code>.gitattributes</code> will not be visible to the URL reader when using the
+<code>readTree</code> or <code>search</code> methods.</p>
+<p>Be aware of this limitation and ensure that end-users of your plugin are also
+aware via, for example, documentation.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="writing-a-new-url-reader">Writing a new URL Reader<a href="#writing-a-new-url-reader" class="hash-link" aria-label="Direct link to Writing a new URL Reader" title="Direct link to Writing a new URL Reader">​</a></h2>
 <p>If the available URL Readers are not sufficient for your use case and you want
 to add a new URL Reader for any other provider, you are most welcome to
