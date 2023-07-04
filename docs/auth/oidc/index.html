@@ -22,8 +22,8 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.0ffd8a10.css">
-<script src="/assets/js/runtime~main.be966369.js" defer="defer"></script>
-<script src="/assets/js/main.2eb73271.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.fd7e286e.js" defer="defer"></script>
+<script src="/assets/js/main.84225058.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus">
@@ -127,6 +127,7 @@ new secret.</li>
 <li><code>metadataUrl</code>: In Overview &gt; Endpoints tab, grab OpenID Connect metadata document URL.</li>
 <li><code>authorizationUrl</code> and <code>tokenUrl</code>: Open the <code>metadataUrl</code> in a browser, that json will
 hold these 2 urls somewhere in there.</li>
+<li><code>tokenEndpointAuthMethod</code>: Don&#x27;t define it, use the default unless you know what it does.</li>
 <li><code>tokenSignedResponseAlg</code>: Don&#x27;t define it, use the default unless you know what it does.</li>
 <li><code>scope</code>: Only used if we didn&#x27;t specify <code>defaultScopes</code> in the provider&#x27;s factory,
 basically the same thing.</li>
