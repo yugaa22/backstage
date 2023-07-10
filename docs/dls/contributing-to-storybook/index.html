@@ -22,8 +22,8 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.0ffd8a10.css">
-<script src="/assets/js/runtime~main.fd7e286e.js" defer="defer"></script>
-<script src="/assets/js/main.30c26ebe.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.f7c76a22.js" defer="defer"></script>
+<script src="/assets/js/main.24753a2b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus">
@@ -35,8 +35,8 @@ on.</p>
 <p>You&#x27;ll find our storybook at
 <a href="http://backstage.io/storybook" target="_blank" rel="noopener noreferrer">http://backstage.io/storybook</a>.</p>
 <p>As noted in the <a href="/docs/dls/design">design introduction</a>, Backstage&#x27;s design is based
-off of <a href="https://material-ui.com/" target="_blank" rel="noopener noreferrer">Material-UI</a>. Much of the UI elements use
-direct Material-UI, while we&#x27;ve also extended and written custom ones to provide
+off of <a href="https://material-ui.com/" target="_blank" rel="noopener noreferrer">Material UI</a>. Much of the UI elements use
+direct Material UI, while we&#x27;ve also extended and written custom ones to provide
 specific functionality.</p>
 <p><img loading="lazy" alt="Storybook Page" src="/assets/images/storybook-page-658f654f25a07d8c58798ad039d81ca3.png" width="1920" height="877" class="img_ev3q"></p>
 <p>Storybook &quot;Stories&quot; are used to provide examples for how to use a specific
@@ -44,12 +44,12 @@ component, which are then displayed both visually and with sample code to be
 copied.</p>
 <p>When custom Backstage components are created, they are placed in the
 <code>@backstage/core-components</code> package and added to the Storybook.</p>
-<p>There may be times where an existing Material-UI component (in
+<p>There may be times where an existing Material UI component (in
 <code>@material-ui/core</code>) is sufficient and doesn&#x27;t need to be wrapped or duplicated.
 However, we may want to identify an <em>opinionated</em> way to use that component
 inside of Backstage. In these cases, stories showing how to use those existing
 components will also be put into our storybook.</p>
-<p>When a story example using Material-UI becomes more complex, requiring a
+<p>When a story example using Material UI becomes more complex, requiring a
 specific set of colors, variants, parameters, etc., it may become a candidate to
 be refactored to become a full Backstage core component.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="creating-a-new-story">Creating a new Story<a href="#creating-a-new-story" class="hash-link" aria-label="Direct link to Creating a new Story" title="Direct link to Creating a new Story">​</a></h2>

@@ -22,8 +22,8 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.0ffd8a10.css">
-<script src="/assets/js/runtime~main.fd7e286e.js" defer="defer"></script>
-<script src="/assets/js/main.30c26ebe.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.f7c76a22.js" defer="defer"></script>
+<script src="/assets/js/main.24753a2b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus">
@@ -32,7 +32,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="highlights">Highlights<a href="#highlights" class="hash-link" aria-label="Direct link to Highlights" title="Direct link to Highlights">​</a></h2>
 <p>This release has an important security fix, along with a lot of squashed bugs and exciting additions! Enjoy.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="breaking-removed-the-tabs-core-component">BREAKING: Removed the <code>Tabs</code> core component<a href="#breaking-removed-the-tabs-core-component" class="hash-link" aria-label="Direct link to breaking-removed-the-tabs-core-component" title="Direct link to breaking-removed-the-tabs-core-component">​</a></h3>
-<p>The <code>Tabs</code> component was removed from <code>@backstage/core-components</code>. It was a thin shim that provided very little value and was considered confusing, when the <a href="https://v4.mui.com/components/tabs/" target="_blank" rel="noopener noreferrer">native Material-UI tabs</a> were already fully usable out of the box. Check out the pull request below for more details.</p>
+<p>The <code>Tabs</code> component was removed from <code>@backstage/core-components</code>. It was a thin shim that provided very little value and was considered confusing, when the <a href="https://v4.mui.com/components/tabs/" target="_blank" rel="noopener noreferrer">native Material UI tabs</a> were already fully usable out of the box. Check out the pull request below for more details.</p>
 <p>Contributed by <a href="https://github.com/tudi2d" target="_blank" rel="noopener noreferrer">@tudi2d</a> in <a href="https://github.com/backstage/backstage/pull/16587" target="_blank" rel="noopener noreferrer">#16587</a></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="breaking-gitlabdiscoveryentityprovider-branch-handling">BREAKING: <code>GitlabDiscoveryEntityProvider</code> branch handling<a href="#breaking-gitlabdiscoveryentityprovider-branch-handling" class="hash-link" aria-label="Direct link to breaking-gitlabdiscoveryentityprovider-branch-handling" title="Direct link to breaking-gitlabdiscoveryentityprovider-branch-handling">​</a></h3>
 <p>The way that the <code>GitlabDiscoveryEntityProvider</code> handles branches has changed, to remove the confusion of whether you want to <em>force</em> the use of a certain branch name or whether you just want to provide a <em>fallback</em> branch name. If you were passing in the <code>branch</code> parameter intending it to be just a fallback, you may want to rename it to <code>fallbackBranch</code>.</p>
