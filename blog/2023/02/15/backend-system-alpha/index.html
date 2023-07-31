@@ -22,8 +22,8 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.e737a141.css">
-<script src="/assets/js/runtime~main.c491dd7e.js" defer="defer"></script>
-<script src="/assets/js/main.d7cd28c3.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3db355cd.js" defer="defer"></script>
+<script src="/assets/js/main.c3bd3f9b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus">
@@ -40,7 +40,6 @@
 <li>Make it easier to create and maintain backend installations.</li>
 <li>Align how plugins provide points of customization and how those customizations are installed.</li>
 <li>Make it much easier to maintain plugins, in particular keeping the API stable.</li>
-<li>Simplify the process of splitting plugins out into separate deployments with shared environments.</li>
 <li>Improve the local development and testing experience.</li>
 </ul>
 <p>Prioritizing simplicity is often a guiding principle that we use for designs that span multiple ownership roles. We decide on which parts of the system that we think are the most important to have as simple as possible, or, viewed from the opposite end, where in the system we put necessary complexity. In this case, we optimized for keeping the backend setup as simple as possible, followed by modules and plugins, then libraries, and lastly the framework itself. What this guidance means in practice is that when there is complexity that needs to be added to implement a certain feature, we place as much of it as possible within the framework itself, then libraries, plugins and modules, and if absolutely needed, the backend setup.</p>
