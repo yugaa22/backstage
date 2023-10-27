@@ -89,7 +89,13 @@ import { RoutingProvider } from '../routing/RoutingProvider';
 import { resolveRouteBindings } from '../routing/resolveRouteBindings';
 import { collectRouteIds } from '../routing/collectRouteIds';
 import { createAppTree } from '../tree';
-import { CoreComponents } from '../extensions/CoreComponents';
+import {
+  CoreComponents,
+  DefaultProgressComponent,
+  DefaultErrorBoundaryComponent,
+  DefaultBootErrorPageComponent,
+  DefaultNotFoundErrorPageComponent,
+} from '../extensions/CoreComponents';
 import { AppNode } from '@backstage/frontend-plugin-api';
 import { toLegacyPlugin } from '../routing/toLegacyPlugin';
 
@@ -99,6 +105,10 @@ const builtinExtensions = [
   CoreNav,
   CoreLayout,
   CoreComponents,
+  DefaultProgressComponent,
+  DefaultErrorBoundaryComponent,
+  DefaultBootErrorPageComponent,
+  DefaultNotFoundErrorPageComponent,
   LightTheme,
   DarkTheme,
 ];
