@@ -20,9 +20,13 @@ import {
   AppTheme,
   IconComponent,
 } from '@backstage/core-plugin-api';
-// eslint-disable-next-line @backstage/no-relative-monorepo-imports
-import { AppComponents } from '../../../core-app-api/src/app/types';
 import { RouteRef } from '../routing';
+import {
+  CoreProgressComponent,
+  CoreBootErrorPageComponent,
+  CoreNotFoundErrorPageComponent,
+  CoreErrorBoundaryFallbackComponent,
+} from '../types';
 import { createExtensionDataRef } from './createExtensionDataRef';
 
 /** @public */
@@ -44,17 +48,18 @@ export const coreExtensionData = {
   navTarget: createExtensionDataRef<NavTarget>('core.nav.target'),
   theme: createExtensionDataRef<AppTheme>('core.theme'),
   components: {
-    progress: createExtensionDataRef<AppComponents['Progress']>(
+    progress: createExtensionDataRef<CoreProgressComponent>(
       'core.components.progress',
     ),
-    bootErrorPage: createExtensionDataRef<AppComponents['BootErrorPage']>(
+    bootErrorPage: createExtensionDataRef<CoreBootErrorPageComponent>(
       'core.components.bootErrorPage',
     ),
-    notFoundErrorPage: createExtensionDataRef<
-      AppComponents['NotFoundErrorPage']
-    >('core.components.notFoundErrorPage'),
-    errorBoundaryFallback: createExtensionDataRef<
-      AppComponents['ErrorBoundaryFallback']
-    >('core.components.errorBoundary'),
+    notFoundErrorPage: createExtensionDataRef<CoreNotFoundErrorPageComponent>(
+      'core.components.notFoundErrorPage',
+    ),
+    errorBoundaryFallback:
+      createExtensionDataRef<CoreErrorBoundaryFallbackComponent>(
+        'core.components.errorBoundary',
+      ),
   },
 };

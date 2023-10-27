@@ -359,6 +359,7 @@ function createLegacyAppContext(plugins: BackstagePlugin[]): AppContext {
     getComponents(): AppComponents {
       return {
         ...defaultComponents,
+        // The default nullable components are overridden by the CoreComponents built-in extension
         Progress: () => null,
         BootErrorPage: () => null,
         NotFoundErrorPage: () => null,
