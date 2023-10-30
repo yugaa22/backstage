@@ -14,19 +14,14 @@
  * limitations under the License.
  */
 
-import { JSX } from 'react';
+import { ComponentType, JSX } from 'react';
 import {
   AnyApiFactory,
   AppTheme,
   IconComponent,
 } from '@backstage/core-plugin-api';
 import { RouteRef } from '../routing';
-import {
-  CoreProgressComponent,
-  CoreBootErrorPageComponent,
-  CoreNotFoundErrorPageComponent,
-  CoreErrorBoundaryFallbackComponent,
-} from '../types';
+import { ComponentRef } from '../components';
 import { createExtensionDataRef } from './createExtensionDataRef';
 
 /** @public */
@@ -38,28 +33,14 @@ export type NavTarget = {
 
 /** @public */
 export const coreExtensionData = {
-  reactComponent: createExtensionDataRef<
-    <T extends {}>(props: T) => JSX.Element
-  >('core.reactComponent'),
   reactElement: createExtensionDataRef<JSX.Element>('core.reactElement'),
   routePath: createExtensionDataRef<string>('core.routing.path'),
   apiFactory: createExtensionDataRef<AnyApiFactory>('core.api.factory'),
   routeRef: createExtensionDataRef<RouteRef>('core.routing.ref'),
   navTarget: createExtensionDataRef<NavTarget>('core.nav.target'),
   theme: createExtensionDataRef<AppTheme>('core.theme'),
-  components: {
-    progress: createExtensionDataRef<CoreProgressComponent>(
-      'core.components.progress',
-    ),
-    bootErrorPage: createExtensionDataRef<CoreBootErrorPageComponent>(
-      'core.components.bootErrorPage',
-    ),
-    notFoundErrorPage: createExtensionDataRef<CoreNotFoundErrorPageComponent>(
-      'core.components.notFoundErrorPage',
-    ),
-    errorBoundaryFallback:
-      createExtensionDataRef<CoreErrorBoundaryFallbackComponent>(
-        'core.components.errorBoundary',
-      ),
-  },
+  component: createExtensionDataRef<{
+    ref: ComponentRef<ComponentType<any>>;
+    impl: ComponentType<any>;
+  }>('component.ref'),
 };
