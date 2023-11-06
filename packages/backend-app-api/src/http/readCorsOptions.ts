@@ -16,7 +16,7 @@
 
 import { Config } from '@backstage/config';
 import { CorsOptions } from 'cors';
-import { Minimatch } from 'minimatch';
+import minimatch from 'minimatch';
 
 /**
  * Attempts to read a CORS options object from the backend configuration object.
@@ -70,7 +70,8 @@ function createCorsOriginMatcher(allowedOriginPatterns: string[] | undefined) {
   }
 
   const allowedOriginMatchers = allowedOriginPatterns.map(
-    pattern => new Minimatch(pattern, { nocase: true, noglobstar: true }),
+    pattern =>
+      new minimatch.Minimatch(pattern, { nocase: true, noglobstar: true }),
   );
 
   return (

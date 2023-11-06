@@ -34,7 +34,7 @@ import {
 } from '@material-ui/core';
 import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 import SettingsIcon from '@material-ui/icons/Settings';
-import { compact } from 'lodash';
+import compact from 'lodash/compact';
 import React, { Fragment, useEffect, useMemo, useState } from 'react';
 import useAsync from 'react-use/lib/useAsync';
 

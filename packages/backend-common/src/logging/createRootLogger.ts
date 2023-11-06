@@ -15,7 +15,7 @@
  */
 
 import { WinstonLogger } from '@backstage/backend-app-api';
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 import * as winston from 'winston';
 import { format, LoggerOptions } from 'winston';
 import { setRootLogger } from './globalLoggers';

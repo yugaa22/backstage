@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { get } from 'lodash';
+import get from 'lodash/get';
 import { RESOURCE_TYPE_CATALOG_ENTITY } from '@backstage/plugin-catalog-common/alpha';
 import { createCatalogPermissionRule } from './util';
 import { z } from 'zod';

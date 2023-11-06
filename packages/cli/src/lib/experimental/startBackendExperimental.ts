@@ -26,6 +26,9 @@ import { fileURLToPath, pathToFileURL } from 'url';
 import { isAbsolute as isAbsolutePath } from 'path';
 import { paths } from '../paths';
 import spawn from 'cross-spawn';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const [nodeMajor, nodeMinor] = process.versions.node.split('.').map(Number);
 const supportsModuleLoaderRegister = nodeMajor >= 20 && nodeMinor >= 6;

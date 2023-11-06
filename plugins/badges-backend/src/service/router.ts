@@ -27,7 +27,7 @@ import { Config } from '@backstage/config';
 import { AuthenticationError, NotFoundError } from '@backstage/errors';
 import { BadgeBuilder, DefaultBadgeBuilder } from '../lib/BadgeBuilder';
 import { BadgeContext, BadgeFactories } from '../types';
-import { isNil } from 'lodash';
+import isNil from 'lodash/isNil';
 import { Logger } from 'winston';
 import { IdentityApi } from '@backstage/plugin-auth-node';
 import { getBearerTokenFromAuthorizationHeader } from '@backstage/plugin-auth-node';

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import qs from 'qs';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';

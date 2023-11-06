@@ -21,7 +21,7 @@ import MaterialLink, {
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import classnames from 'classnames';
-import { trimEnd } from 'lodash';
+import trimEnd from 'lodash/trimEnd';
 import React, { ElementType } from 'react';
 import {
   createRoutesFromChildren,

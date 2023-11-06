@@ -32,7 +32,7 @@ import {
   Theme,
   useTheme,
 } from '@material-ui/core';
-import { compact } from 'lodash';
+import compact from 'lodash/compact';
 import useObservable from 'react-use/lib/useObservable';
 import { ContentHeader, ErrorBoundary } from '@backstage/core-components';
 import Typography from '@material-ui/core/Typography';

@@ -25,6 +25,9 @@ import {
 import { ConfigSchemaPackageEntry } from './types';
 import { JsonObject } from '@backstage/types';
 import { assertError } from '@backstage/errors';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 type Item = {
   name?: string;

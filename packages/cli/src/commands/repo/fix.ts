@@ -189,12 +189,40 @@ export function fixSideEffects(pkg: FixablePackage) {
   pkg.changed = true;
 }
 
+export function fixModuleType(pkg: FixablePackage) {
+  const role = PackageRoles.getRoleFromPackage(pkg.packageJson);
+  if (!role) {
+    return;
+  }
+
+  const roleInfo = PackageRoles.getRoleInfo(role);
+
+  // if (roleInfo.platform !== 'node') {
+  //   return;
+  // }
+
+  if ('type' in pkg.packageJson) {
+    return;
+  }
+
+  const pkgEntries = Object.entries(pkg.packageJson);
+  pkgEntries.splice(
+    // Place it just above the main field
+    pkgEntries.findIndex(([name]) => name === 'main'),
+    0,
+    ['type', 'module'],
+  );
+  pkg.packageJson = Object.fromEntries(pkgEntries) as BackstagePackageJson;
+  pkg.changed = true;
+}
+
 export async function command(opts: OptionValues): Promise<void> {
   const packages = await readFixablePackages();
 
   for (const pkg of packages) {
     fixPackageExports(pkg);
     fixSideEffects(pkg);
+    fixModuleType(pkg);
   }
 
   if (opts.check) {

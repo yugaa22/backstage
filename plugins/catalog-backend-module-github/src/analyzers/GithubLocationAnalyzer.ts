@@ -22,7 +22,7 @@ import {
   ScmIntegrations,
 } from '@backstage/integration';
 import { Octokit } from '@octokit/rest';
-import { trimEnd } from 'lodash';
+import trimEnd from 'lodash/trimEnd';
 import parseGitUrl from 'git-url-parse';
 import {
   AnalyzeOptions,

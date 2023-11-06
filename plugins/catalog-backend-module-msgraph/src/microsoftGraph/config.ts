@@ -19,7 +19,7 @@ import {
   TaskScheduleDefinition,
 } from '@backstage/backend-tasks';
 import { Config } from '@backstage/config';
-import { trimEnd } from 'lodash';
+import trimEnd from 'lodash/trimEnd';
 
 const DEFAULT_PROVIDER_ID = 'default';
 const DEFAULT_TARGET = 'https://graph.microsoft.com/v1.0';

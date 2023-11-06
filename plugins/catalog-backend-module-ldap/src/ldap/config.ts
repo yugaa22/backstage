@@ -18,7 +18,7 @@ import { Config } from '@backstage/config';
 import { JsonValue } from '@backstage/types';
 import { SearchOptions } from 'ldapjs';
 import mergeWith from 'lodash/mergeWith';
-import { trimEnd } from 'lodash';
+import trimEnd from 'lodash/trimEnd';
 import { RecursivePartial } from './util';
 
 /**

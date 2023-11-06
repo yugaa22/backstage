@@ -75,7 +75,7 @@ export class TaskWorker {
   private taskQueue: PQueue;
 
   private constructor(private readonly options: TaskWorkerOptions) {
-    this.taskQueue = new PQueue({
+    this.taskQueue = new PQueue.default({
       concurrency: options.concurrentTasksLimit,
     });
   }

@@ -25,7 +25,7 @@ import {
 import { RestEndpointMethodTypes } from '@octokit/rest';
 import fetch, { RequestInit, Response } from 'node-fetch';
 import parseGitUrl from 'git-url-parse';
-import { Minimatch } from 'minimatch';
+import minimatch from 'minimatch';
 import { Readable } from 'stream';
 import { NotFoundError, NotModifiedError } from '@backstage/errors';
 import {
@@ -262,7 +262,7 @@ export class GithubUrlReader implements UrlReader {
       return updated.toString();
     }
 
-    const matcher = new Minimatch(query.replace(/^\/+/, ''));
+    const matcher = new minimatch.Minimatch(query.replace(/^\/+/, ''));
 
     // trees_url looks like "https://api.github.com/repos/octocat/Hello-World/git/trees{/sha}"
     const recursiveTree: GhTreeResponse = await this.fetchJson(

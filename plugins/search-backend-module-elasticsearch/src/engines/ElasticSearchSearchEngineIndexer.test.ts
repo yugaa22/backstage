@@ -17,7 +17,7 @@
 import { getVoidLogger } from '@backstage/backend-common';
 import { TestPipeline } from '@backstage/plugin-search-backend-node';
 import Mock from '@elastic/elasticsearch-mock';
-import { range } from 'lodash';
+import range from 'lodash/range';
 import { ElasticSearchClientWrapper } from './ElasticSearchClientWrapper';
 import { ElasticSearchSearchEngineIndexer } from './ElasticSearchSearchEngineIndexer';
 

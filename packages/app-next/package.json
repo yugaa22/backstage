@@ -130,5 +130,6 @@
   "files": [
     "dist"
   ],
+  "type": "module",
   "license": "Apache-2.0"
 }

@@ -17,7 +17,8 @@
 import { Config, ConfigReader } from '@backstage/config';
 import { JsonObject } from '@backstage/types';
 import { Knex } from 'knex';
-import { merge, omit } from 'lodash';
+import merge from 'lodash/merge';
+import omit from 'lodash/omit';
 import { mergeDatabaseConfig } from './config';
 import {
   createDatabaseClient,

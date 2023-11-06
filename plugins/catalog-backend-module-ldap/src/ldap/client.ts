@@ -16,7 +16,7 @@
 
 import { ForwardedError, stringifyError } from '@backstage/errors';
 import ldap, { Client, SearchEntry, SearchOptions } from 'ldapjs';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import { Logger } from 'winston';
 import { BindConfig, TLSConfig } from './config';
 import { createOptions, errorString } from './util';

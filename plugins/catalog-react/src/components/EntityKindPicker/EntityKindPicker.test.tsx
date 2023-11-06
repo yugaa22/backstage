@@ -20,7 +20,7 @@ import { ApiProvider } from '@backstage/core-app-api';
 import { alertApiRef } from '@backstage/core-plugin-api';
 import { renderWithEffects, TestApiRegistry } from '@backstage/test-utils';
 import { fireEvent, waitFor, screen, within } from '@testing-library/react';
-import { capitalize } from 'lodash';
+import capitalize from 'lodash/capitalize';
 import { default as React } from 'react';
 import { catalogApiRef } from '../../api';
 import { EntityKindFilter } from '../../filters';

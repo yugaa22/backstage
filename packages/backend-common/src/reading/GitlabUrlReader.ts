@@ -23,7 +23,7 @@ import {
 } from '@backstage/integration';
 import fetch, { Response } from 'node-fetch';
 import parseGitUrl from 'git-url-parse';
-import { Minimatch } from 'minimatch';
+import minimatch from 'minimatch';
 import { Readable } from 'stream';
 import { NotFoundError, NotModifiedError } from '@backstage/errors';
 import {
@@ -37,7 +37,8 @@ import {
   ReadUrlResponse,
   ReadUrlOptions,
 } from './types';
-import { trimEnd, trimStart } from 'lodash';
+import trimStart from 'lodash/trimStart';
+import trimEnd from 'lodash/trimEnd';
 import { ReadUrlResponseFactory } from './ReadUrlResponseFactory';
 import { parseLastModified } from './util';
 
@@ -239,7 +240,7 @@ export class GitlabUrlReader implements UrlReader {
   async search(url: string, options?: SearchOptions): Promise<SearchResponse> {
     const { filepath } = parseGitUrl(url);
     const staticPart = this.getStaticPart(filepath);
-    const matcher = new Minimatch(filepath);
+    const matcher = new minimatch.Minimatch(filepath);
     const treeUrl = trimEnd(url.replace(filepath, staticPart), `/`);
     const pathPrefix = staticPart ? `${staticPart}/` : '';
     const tree = await this.readTree(treeUrl, {
@@ -279,7 +280,7 @@ export class GitlabUrlReader implements UrlReader {
     let i = segments.length;
     while (
       i > 0 &&
-      new Minimatch(segments.slice(0, i).join('/')).match(globPattern)
+      new minimatch.Minimatch(segments.slice(0, i).join('/')).match(globPattern)
     ) {
       i--;
     }

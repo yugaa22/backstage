@@ -24,7 +24,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@material-ui/icons/Menu';
-import { orderBy } from 'lodash';
+import orderBy from 'lodash/orderBy';
 import React, { useEffect, useState, useContext, ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { SidebarOpenStateProvider } from './SidebarOpenStateContext';

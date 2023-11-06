@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { groupBy } from 'lodash';
+import groupBy from 'lodash/groupBy';
 
 import { FilterStatusType, statusTypes } from '../../apis/types';
 import { Countify, ChartableStageDatapoints } from '../types';

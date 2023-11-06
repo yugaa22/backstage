@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { ConfigReader } from '@backstage/config';
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 import path from 'path';
 import {
   createDatabaseClient,

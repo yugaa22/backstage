@@ -17,7 +17,7 @@
 import { ActionContext, TemplateAction } from './types';
 import { z } from 'zod';
 import { Schema } from 'jsonschema';
-import zodToJsonSchema from 'zod-to-json-schema';
+import { zodToJsonSchema } from 'zod-to-json-schema';
 import { JsonObject } from '@backstage/types';
 
 /** @public */

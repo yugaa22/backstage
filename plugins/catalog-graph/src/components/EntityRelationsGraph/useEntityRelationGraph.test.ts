@@ -20,7 +20,7 @@ import {
   RELATION_PART_OF,
 } from '@backstage/catalog-model';
 import { renderHook } from '@testing-library/react';
-import { pick } from 'lodash';
+import pick from 'lodash/pick';
 import { useEntityRelationGraph } from './useEntityRelationGraph';
 import { useEntityStore as useEntityStoreMocked } from './useEntityStore';
 

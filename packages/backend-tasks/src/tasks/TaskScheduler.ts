@@ -20,7 +20,7 @@ import {
   PluginDatabaseManager,
 } from '@backstage/backend-common';
 import { Config } from '@backstage/config';
-import { once } from 'lodash';
+import once from 'lodash/once';
 import { Duration } from 'luxon';
 import { Logger } from 'winston';
 import { migrateBackendTasks } from '../database/migrateBackendTasks';

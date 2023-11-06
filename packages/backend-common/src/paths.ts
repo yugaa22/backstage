@@ -16,7 +16,10 @@
 
 import { isChildPath } from '@backstage/cli-common';
 import { NotAllowedError } from '@backstage/errors';
+import { createRequire } from 'module';
 import { resolve as resolvePath } from 'path';
+
+const require = createRequire(import.meta.url);
 
 /** @internal */
 export const packagePathMocks = new Map<

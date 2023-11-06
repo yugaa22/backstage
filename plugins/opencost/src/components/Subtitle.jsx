@@ -16,7 +16,7 @@
 
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { upperFirst } from 'lodash';
+import upperFirst from 'lodash/upperFirst';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Typography from '@material-ui/core/Typography';

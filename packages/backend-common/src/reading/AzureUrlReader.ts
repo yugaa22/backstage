@@ -24,7 +24,7 @@ import {
   AzureIntegration,
 } from '@backstage/integration';
 import fetch, { Response } from 'node-fetch';
-import { Minimatch } from 'minimatch';
+import minimatch from 'minimatch';
 import { Readable } from 'stream';
 import { NotFoundError, NotModifiedError } from '@backstage/errors';
 import {
@@ -184,7 +184,7 @@ export class AzureUrlReader implements UrlReader {
     const treeUrl = new URL(url);
 
     const path = treeUrl.searchParams.get('path');
-    const matcher = path && new Minimatch(path.replace(/^\/+/, ''));
+    const matcher = path && new minimatch.Minimatch(path.replace(/^\/+/, ''));
 
     // TODO(freben): For now, read the entire repo and filter through that. In
     // a future improvement, we could be smart and try to deduce that non-glob

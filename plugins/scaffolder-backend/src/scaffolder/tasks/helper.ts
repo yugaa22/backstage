@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { isArray } from 'lodash';
+import isArray from 'lodash/isArray';
 import { Schema } from 'jsonschema';
 
 /**

@@ -35,7 +35,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { capitalize } from 'lodash';
+import capitalize from 'lodash/capitalize';
 
 import { useZoom, useZoomArea } from './zoom';
 import { FilterStatusType, TriggerReason } from '../apis/types';

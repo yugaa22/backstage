@@ -16,7 +16,7 @@
 
 import { BackendBundlingOptions, BundlingOptions } from './types';
 import { posix as posixPath, resolve as resolvePath } from 'path';
-import webpack, { ProvidePlugin } from 'webpack';
+import webpack from 'webpack';
 
 import { BackstagePackage } from '@backstage/cli-node';
 import { BundlingPaths } from './paths';
@@ -40,6 +40,10 @@ import { transforms } from './transforms';
 import { version } from '../../lib/version';
 import yn from 'yn';
 import { hasReactDomClient } from './hasReactDomClient';
+
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const BUILD_CACHE_ENV_VAR = 'BACKSTAGE_CLI_EXPERIMENTAL_BUILD_CACHE';
 
@@ -113,7 +117,7 @@ export async function createConfig(
   // we use the provide plugin to provide this polyfill, but lets look
   // to remove this eventually!
   plugins.push(
-    new ProvidePlugin({
+    new webpack.ProvidePlugin({
       process: 'process/browser',
       Buffer: ['buffer', 'Buffer'],
     }),

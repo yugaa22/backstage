@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { readdir, stat } from 'fs-extra';
+import fs from 'fs-extra';
 import { relative, join } from 'path';
 import { createTemplateAction } from '@backstage/plugin-scaffolder-node';
 import { examples } from './log.examples';
@@ -76,11 +76,11 @@ export function createDebugLogAction() {
 }
 
 export async function recursiveReadDir(dir: string): Promise<string[]> {
-  const subdirs = await readdir(dir);
+  const subdirs = await fs.readdir(dir);
   const files = await Promise.all(
     subdirs.map(async subdir => {
       const res = join(dir, subdir);
-      return (await stat(res)).isDirectory() ? recursiveReadDir(res) : [res];
+      return (await fs.stat(res)).isDirectory() ? recursiveReadDir(res) : [res];
     }),
   );
   return files.reduce((a, f) => a.concat(f), []);

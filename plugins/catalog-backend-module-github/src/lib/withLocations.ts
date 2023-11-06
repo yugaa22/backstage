@@ -19,7 +19,7 @@ import {
   ANNOTATION_ORIGIN_LOCATION,
   Entity,
 } from '@backstage/catalog-model';
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 import {
   ANNOTATION_GITHUB_TEAM_SLUG,
   ANNOTATION_GITHUB_USER_LOGIN,

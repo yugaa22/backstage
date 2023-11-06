@@ -31,7 +31,7 @@ import {
 } from 'json-rules-engine';
 import { DefaultCheckRegistry } from './CheckRegistry';
 import { Logger } from 'winston';
-import { pick } from 'lodash';
+import pick from 'lodash/pick';
 import Ajv, { SchemaObject } from 'ajv';
 import * as validationSchema from './validation-schema.json';
 import { JSON_RULE_ENGINE_CHECK_TYPE } from '../constants';

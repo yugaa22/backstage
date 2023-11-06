@@ -3932,7 +3932,7 @@ __metadata:
     vite-plugin-node-polyfills:
       optional: true
   bin:
-    backstage-cli: bin/backstage-cli
+    backstage-cli: bin/backstage-cli.cjs
   languageName: unknown
   linkType: soft
 

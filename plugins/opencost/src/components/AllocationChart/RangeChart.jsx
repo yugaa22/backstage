@@ -24,7 +24,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { makeStyles } from '@material-ui/styles';
-import { reverse } from 'lodash';
+import reverse from 'lodash/reverse';
 import { primary, greyscale, browns } from '../../constants/colors';
 import { toCurrency } from '../../util';
 

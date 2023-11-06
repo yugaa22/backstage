@@ -32,7 +32,7 @@ import {
   ANNOTATION_ORIGIN_LOCATION,
   Entity,
 } from '@backstage/catalog-model';
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 import { readPuppetNodes } from '../puppet/read';
 import { ENDPOINT_NODES } from '../puppet/constants';
 

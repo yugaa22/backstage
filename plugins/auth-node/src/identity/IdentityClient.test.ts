@@ -22,7 +22,7 @@ import {
   generateKeyPair,
   SignJWT,
 } from 'jose';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { v4 as uuid } from 'uuid';

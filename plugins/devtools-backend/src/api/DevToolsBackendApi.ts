@@ -34,7 +34,7 @@ import ping from 'ping';
 import os from 'os';
 import fs from 'fs-extra';
 import { Lockfile } from '../util/Lockfile';
-import { memoize } from 'lodash';
+import memoize from 'lodash/memoize';
 import { assertError } from '@backstage/errors';
 
 /** @public */

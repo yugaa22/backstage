@@ -16,7 +16,7 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import { Slider } from '@material-ui/core';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 import { formatDuration, formatDurationFromSeconds } from './utils';
 import { Label } from './label';

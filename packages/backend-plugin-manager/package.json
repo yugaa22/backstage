@@ -3,6 +3,7 @@
   "description": "Backstage plugin management backend",
   "version": "0.0.3-next.1",
   "private": true,
+  "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {

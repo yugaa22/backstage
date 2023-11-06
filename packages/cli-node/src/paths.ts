@@ -15,6 +15,7 @@
  */
 
 import { findPaths } from '@backstage/cli-common';
+import { fileURLToPath } from 'url';
 
 /* eslint-disable-next-line no-restricted-syntax */
-export const paths = findPaths(__dirname);
+export const paths = findPaths(fileURLToPath(import.meta.url));

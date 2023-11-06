@@ -16,7 +16,7 @@
 
 import { findPaths } from '@backstage/cli-common';
 import { PackageGraph } from '@backstage/cli-node';
-import { Minimatch } from 'minimatch';
+import minimatch from 'minimatch';
 import { isAbsolute, relative as relativePath } from 'path';
 
 /* eslint-disable-next-line no-restricted-syntax */
@@ -40,8 +40,9 @@ export async function resolvePackagePaths(
     packages = packages.filter(({ dir }) =>
       providedPaths.some(
         path =>
-          new Minimatch(path).match(relativePath(paths.targetRoot, dir)) ||
-          isChildPath(dir, path),
+          new minimatch.Minimatch(path).match(
+            relativePath(paths.targetRoot, dir),
+          ) || isChildPath(dir, path),
       ),
     );
   }
@@ -49,7 +50,9 @@ export async function resolvePackagePaths(
   if (include) {
     packages = packages.filter(pkg =>
       include.some(pattern =>
-        new Minimatch(pattern).match(relativePath(paths.targetRoot, pkg.dir)),
+        new minimatch.Minimatch(pattern).match(
+          relativePath(paths.targetRoot, pkg.dir),
+        ),
       ),
     );
   }
@@ -58,7 +61,7 @@ export async function resolvePackagePaths(
     packages = packages.filter(pkg =>
       exclude.some(
         pattern =>
-          !new Minimatch(pattern).match(
+          !new minimatch.Minimatch(pattern).match(
             relativePath(paths.targetRoot, pkg.dir),
           ),
       ),

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Isolate } from 'isolated-vm';
+import isolated from 'isolated-vm';
 import { resolvePackagePath } from '@backstage/backend-common';
 import {
   TemplateFilter as _TemplateFilter,
@@ -124,7 +124,7 @@ export class SecureTemplater {
       templateGlobals = {},
     } = options;
 
-    const isolate = new Isolate({ memoryLimit: 128 });
+    const isolate = new isolated.Isolate({ memoryLimit: 128 });
     const context = await isolate.createContext();
     const contextGlobal = context.global;
 

@@ -441,6 +441,7 @@ function lazy(
 
       process.exit(0);
     } catch (error) {
+      console.log(`DEBUG: error=`, error.stack);
       assertError(error);
       exitWithError(error);
     }

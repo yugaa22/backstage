@@ -52,6 +52,7 @@
     "lint": "backstage-cli package lint"
   },
   "prettier": "@spotify/prettier-config",
+  "type": "module",
   "browserslist": {
     "production": [
       ">0.2%",

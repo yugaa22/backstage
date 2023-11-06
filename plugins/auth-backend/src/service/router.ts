@@ -34,7 +34,7 @@ import { createOidcRouter, TokenFactory, KeyStores } from '../identity';
 import session from 'express-session';
 import connectSessionKnex from 'connect-session-knex';
 import passport from 'passport';
-import { Minimatch } from 'minimatch';
+import minimatch from 'minimatch';
 import { CatalogAuthResolverContext } from '../lib/resolvers';
 import { AuthDatabase } from '../database/AuthDatabase';
 import { BACKSTAGE_SESSION_EXPIRATION } from '../lib/session';
@@ -239,7 +239,8 @@ export function createOriginFilter(
 
   const allowedOriginPatterns =
     allowedOrigins?.map(
-      pattern => new Minimatch(pattern, { nocase: true, noglobstar: true }),
+      pattern =>
+        new minimatch.Minimatch(pattern, { nocase: true, noglobstar: true }),
     ) ?? [];
 
   return origin => {

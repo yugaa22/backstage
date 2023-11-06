@@ -38,7 +38,7 @@ import { RELATION_OWNED_BY, CompoundEntityRef } from '@backstage/catalog-model';
 import { Header, HeaderLabel } from '@backstage/core-components';
 import { useRouteRef, configApiRef, useApi } from '@backstage/core-plugin-api';
 
-import { capitalize } from 'lodash';
+import capitalize from 'lodash/capitalize';
 
 import { rootRouteRef } from '../../../routes';
 

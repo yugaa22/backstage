@@ -15,7 +15,7 @@
  */
 import camelCase from 'lodash/camelCase';
 import { Entity } from '@backstage/catalog-model';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import {
   FactLifecycle,
   MaxItems,

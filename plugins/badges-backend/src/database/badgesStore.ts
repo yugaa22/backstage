@@ -19,7 +19,7 @@ import {
   resolvePackagePath,
 } from '@backstage/backend-common';
 import { Knex } from 'knex';
-import { isNil } from 'lodash';
+import isNil from 'lodash/isNil';
 import { v4 as uuidv4 } from 'uuid';
 
 /**

@@ -24,8 +24,8 @@ import {
 } from '@backstage/integration';
 import fetch, { Response } from 'node-fetch';
 import parseGitUrl from 'git-url-parse';
-import { trimEnd } from 'lodash';
-import { Minimatch } from 'minimatch';
+import trimEnd from 'lodash/trimEnd';
+import minimatch from 'minimatch';
 import { Readable } from 'stream';
 import {
   ReaderFactory,
@@ -160,7 +160,7 @@ export class BitbucketServerUrlReader implements UrlReader {
 
   async search(url: string, options?: SearchOptions): Promise<SearchResponse> {
     const { filepath } = parseGitUrl(url);
-    const matcher = new Minimatch(filepath);
+    const matcher = new minimatch.Minimatch(filepath);
 
     // TODO(freben): For now, read the entire repo and filter through that. In
     // a future improvement, we could be smart and try to deduce that non-glob

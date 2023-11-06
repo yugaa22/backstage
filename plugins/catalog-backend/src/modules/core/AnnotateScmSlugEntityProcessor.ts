@@ -21,7 +21,9 @@ import {
   ScmIntegrations,
 } from '@backstage/integration';
 import parseGitUrl from 'git-url-parse';
-import { identity, merge, pickBy } from 'lodash';
+import merge from 'lodash/merge';
+import identity from 'lodash/identity';
+import pickBy from 'lodash/pickBy';
 import { LocationSpec } from '@backstage/plugin-catalog-common';
 import { CatalogProcessor } from '@backstage/plugin-catalog-node';
 

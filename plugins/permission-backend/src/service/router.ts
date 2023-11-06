@@ -43,7 +43,7 @@ import {
   PermissionPolicy,
 } from '@backstage/plugin-permission-node';
 import { PermissionIntegrationClient } from './PermissionIntegrationClient';
-import { memoize } from 'lodash';
+import memoize from 'lodash/memoize';
 import DataLoader from 'dataloader';
 import { Config } from '@backstage/config';
 

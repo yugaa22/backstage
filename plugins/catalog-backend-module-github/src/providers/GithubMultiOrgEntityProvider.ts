@@ -52,7 +52,7 @@ import {
   TeamEditedEvent,
   TeamEvent,
 } from '@octokit/webhooks-types';
-import { merge } from 'lodash';
+import merge from 'lodash/merge';
 import * as uuid from 'uuid';
 import { Logger } from 'winston';
 

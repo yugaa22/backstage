@@ -2,6 +2,7 @@
   "name": "@backstage/backend-tasks",
   "description": "Common distributed task management library for Backstage backends",
   "version": "0.5.12-next.1",
+  "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {

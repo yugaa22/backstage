@@ -41,7 +41,7 @@ import {
   UserCardActions,
   GroupCardActions,
 } from './CardActionComponents';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 /**
  * Properties for an entity popover on hover of a component.

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { sortBy } from 'lodash';
+import sortBy from 'lodash/sortBy';
 import { DateTime } from 'luxon';
 import React, { useState } from 'react';
 

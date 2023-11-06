@@ -16,7 +16,7 @@
 
 import React from 'react';
 import useCopyToClipboard from 'react-use/lib/useCopyToClipboard';
-import { capitalize } from 'lodash';
+import capitalize from 'lodash/capitalize';
 import {
   CodeSnippet,
   TableColumn,

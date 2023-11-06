@@ -24,7 +24,9 @@ import {
   stringifyLocationRef,
 } from '@backstage/catalog-model';
 import { ScmIntegrationRegistry } from '@backstage/integration';
-import { identity, merge, pickBy } from 'lodash';
+import merge from 'lodash/merge';
+import identity from 'lodash/identity';
+import pickBy from 'lodash/pickBy';
 import { LocationSpec } from '@backstage/plugin-catalog-common';
 import {
   CatalogProcessor,

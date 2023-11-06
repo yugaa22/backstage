@@ -32,7 +32,8 @@ import {
 import { ScmIntegrations } from '@backstage/integration';
 import { createHash } from 'crypto';
 import { Router } from 'express';
-import lodash, { keyBy } from 'lodash';
+import lodash from 'lodash';
+import keyBy from 'lodash/keyBy';
 
 import {
   CatalogProcessor,

@@ -2,6 +2,7 @@
   "name": "@backstage/backend-common",
   "description": "Common functionality library for Backstage backends",
   "version": "0.19.9-next.1",
+  "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {

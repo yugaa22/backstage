@@ -48,7 +48,7 @@ import {
 
 import { EventParams, EventSubscriber } from '@backstage/plugin-events-node';
 import { PushEvent, Commit } from '@octokit/webhooks-types';
-import { Minimatch } from 'minimatch';
+import minimatch from 'minimatch';
 
 const TOPIC_REPO_PUSH = 'github.push';
 
@@ -412,7 +412,7 @@ export class GithubEntityProvider implements EntityProvider, EventSubscriber {
       ? this.config.catalogPath.substring(1)
       : this.config.catalogPath;
 
-    const matcher = new Minimatch(catalogFile);
+    const matcher = new minimatch.Minimatch(catalogFile);
     return commits
       .map(transformOperation)
       .flat()

@@ -144,7 +144,7 @@ ruleTester.run(RULE, rule, {
       ],
     },
     {
-      code: `import { debounce } from 'lodash'`,
+      code: `import debounce from 'lodash/debounce'`,
       output: `import { debounce } from 'directive:add-import:dependencies:lodash'`,
       filename: joinPath(FIXTURE, 'packages/bar/src/index.ts'),
       errors: [
@@ -269,7 +269,7 @@ ruleTester.run(RULE, rule, {
     },
     {
       code: `import { debounce } from 'directive:add-import:dependencies:lodash'`,
-      output: `import { debounce } from 'lodash'`,
+      output: `import debounce from 'lodash/debounce'`,
       filename: joinPath(FIXTURE, 'packages/bar/src/index.ts'),
       errors: [ERR_SWITCH_BACK()],
     },

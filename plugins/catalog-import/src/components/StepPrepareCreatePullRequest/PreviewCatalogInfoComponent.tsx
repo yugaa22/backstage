@@ -19,7 +19,7 @@ import { Card, CardContent, CardHeader } from '@material-ui/core';
 import React from 'react';
 import YAML from 'yaml';
 import { CodeSnippet } from '@backstage/core-components';
-import { trimEnd } from 'lodash';
+import trimEnd from 'lodash/trimEnd';
 import { useCatalogFilename } from '../../hooks';
 
 /**

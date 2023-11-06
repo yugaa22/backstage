@@ -15,7 +15,7 @@
  */
 
 import { Error as LDAPError, SearchEntry, SearchOptions } from 'ldapjs';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import { LdapVendor } from './vendors';
 
 /**

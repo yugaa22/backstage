@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { pickBy } from 'lodash';
+import pickBy from 'lodash/pickBy';
 import { LoggerService } from '@backstage/backend-plugin-api';
 
 import { Config } from '@backstage/config';

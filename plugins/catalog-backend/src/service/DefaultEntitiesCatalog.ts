@@ -21,7 +21,8 @@ import {
 } from '@backstage/catalog-model';
 import { InputError, NotFoundError } from '@backstage/errors';
 import { Knex } from 'knex';
-import { isEqual, chunk as lodashChunk } from 'lodash';
+import isEqual from 'lodash/isEqual';
+import lodashChunk from 'lodash/chunk';
 import { Logger } from 'winston';
 import { z } from 'zod';
 import {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { TestPipeline } from '@backstage/plugin-search-backend-node';
-import { range } from 'lodash';
+import range from 'lodash/range';
 import { Transform } from 'stream';
 import { PgSearchEngineIndexer } from './PgSearchEngineIndexer';
 import { DatabaseStore } from '../database';

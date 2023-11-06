@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { compact, zipObject } from 'lodash';
+import zipObject from 'lodash/zipObject';
+import compact from 'lodash/compact';
 import qs from 'qs';
 import DataLoader from 'dataloader';
 import {

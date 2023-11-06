@@ -17,7 +17,7 @@
 import React, { CSSProperties } from 'react';
 import { DateTime, Duration } from 'luxon';
 import humanizeDuration from 'humanize-duration';
-import { capitalize } from 'lodash';
+import capitalize from 'lodash/capitalize';
 import Typography from '@material-ui/core/Typography';
 
 const infoText: CSSProperties = { color: 'InfoText' };

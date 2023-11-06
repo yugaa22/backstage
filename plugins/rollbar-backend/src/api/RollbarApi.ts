@@ -15,7 +15,7 @@
  */
 
 import { Logger } from 'winston';
-import { camelCase } from 'lodash';
+import camelCase from 'lodash/camelCase';
 import { buildQuery } from '../util';
 import {
   RollbarItemCount,

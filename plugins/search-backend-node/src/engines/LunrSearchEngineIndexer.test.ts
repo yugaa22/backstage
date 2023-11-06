@@ -15,7 +15,7 @@
  */
 
 import lunr from 'lunr';
-import { range } from 'lodash';
+import range from 'lodash/range';
 import { TestPipeline } from '../test-utils';
 import { LunrSearchEngineIndexer } from './LunrSearchEngineIndexer';
 

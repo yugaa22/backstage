@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 import React, {
   PropsWithChildren,
   Dispatch,

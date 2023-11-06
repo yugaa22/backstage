@@ -32,7 +32,7 @@ import { useApi } from '@backstage/core-plugin-api';
 import useAsync from 'react-use/lib/useAsync';
 import qs from 'qs';
 import { EntityRelationAggregation as EntityRelationsAggregation } from './types';
-import { uniq } from 'lodash';
+import uniq from 'lodash/uniq';
 
 const limiter = limiterFactory(10);
 
