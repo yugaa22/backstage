@@ -22,7 +22,7 @@
 <script src="/js/medium-zoom.js"></script>
 <script src="/js/dismissable-banner.js"></script>
 <script src="/js/scroll-nav-to-view-in-docs.js"></script><link rel="stylesheet" href="/assets/css/styles.c8192502.css">
-<script src="/assets/js/runtime~main.c8e3ddbd.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ca973c6d.js" defer="defer"></script>
 <script src="/assets/js/main.f3e9aa93.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -119,7 +119,12 @@ installed, may be captured.</p>
 
 
 
-<table><thead><tr><th>Action</th><th>Subject</th><th>Other Notes</th></tr></thead><tbody><tr><td><code>navigate</code></td><td>The URL of the page that was navigated to.</td><td>Fired immediately when route location changes (unless associated plugin/route data is ambiguous, in which case the event is fired after plugin/route data becomes known, immediately before the next event or document unload). The parameters of the current route will be included as attributes.</td></tr><tr><td><code>click</code></td><td>The text of the link that was clicked on.</td><td>The <code>to</code> attribute represents the URL clicked to.</td></tr><tr><td><code>create</code></td><td>The <code>name</code> of the software being created; if no <code>name</code> property is requested by the given Software Template, then the string <code>new {templateName}</code> is used instead.</td><td>The context holds an <code>entityRef</code>, set to the template&#x27;s ref (e.g. <code>template:default/template-name</code>).</td></tr><tr><td><code>search</code></td><td>The search term entered in any search bar component.</td><td>The context holds <code>searchTypes</code>, representing <code>types</code> constraining the search. The <code>value</code> represents the total number of search results for the query. This may not be visible if the permission framework is being used.</td></tr><tr><td><code>discover</code></td><td>The title of the search result that was clicked on</td><td>The <code>value</code> is the result rank. A <code>to</code> attribute is also provided.</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Action</th><th>Subject</th><th>Other Notes</th></tr></thead><tbody><tr><td><code>navigate</code></td><td>The URL of the page that was navigated to.</td><td>Fired immediately when route location changes (unless associated plugin/route data is ambiguous, in which case the event is fired after plugin/route data becomes known, immediately before the next event or document unload). The parameters of the current route will be included as attributes.</td></tr><tr><td><code>click</code></td><td>The text of the link that was clicked on.</td><td>The <code>to</code> attribute represents the URL clicked to.</td></tr><tr><td><code>create</code></td><td>The <code>name</code> of the software being created; if no <code>name</code> property is requested by the given Software Template, then the string <code>new {templateName}</code> is used instead.</td><td>The context holds an <code>entityRef</code>, set to the template&#x27;s ref (e.g. <code>template:default/template-name</code>).</td></tr><tr><td><code>search</code></td><td>The search term entered in any search bar component.</td><td>The context holds <code>searchTypes</code>, representing <code>types</code> constraining the search. The <code>value</code> represents the total number of search results for the query. This may not be visible if the permission framework is being used.</td></tr><tr><td><code>discover</code></td><td>The title of the search result that was clicked on</td><td>The <code>value</code> is the result rank. A <code>to</code> attribute is also provided.</td></tr><tr><td><code>not-found</code></td><td>The path of the resource that resulted in a not found page</td><td>Fired by at least TechDocs.</td></tr></tbody></table>
 <p>If there is an event you&#x27;d like to see captured, please <a href="https://github.com/backstage/backstage/issues/new?assignees=&amp;labels=enhancement&amp;template=feature_template.md&amp;title=%5BAnalytics%20Event%5D:%20THE+EVENT+TO+CAPTURE" target="_blank" rel="noopener noreferrer">open an
 issue</a> describing the event you want to see and the questions it
 would help you answer. Or jump to <a href="#capturing-events">Capturing Events</a> to learn how
