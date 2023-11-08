@@ -91,6 +91,7 @@ import { collectRouteIds } from '../routing/collectRouteIds';
 import { createAppTree } from '../tree';
 import { AppNode } from '@backstage/frontend-plugin-api';
 import { toLegacyPlugin } from '../routing/toLegacyPlugin';
+import { RouteTracker } from '../routing/RouteTracker';
 
 const builtinExtensions = [
   Core,
@@ -314,7 +315,10 @@ export function createSpecializedApp(options?: {
         <AppThemeProvider>
           <RoutingProvider {...routeInfo} routeBindings={routeBindings}>
             {/* TODO: set base path using the logic from AppRouter */}
-            <BrowserRouter>{rootEl}</BrowserRouter>
+            <BrowserRouter>
+              <RouteTracker routeObjects={routeInfo.routeObjects} />
+              {rootEl}
+            </BrowserRouter>
           </RoutingProvider>
         </AppThemeProvider>
       </AppContextProvider>
