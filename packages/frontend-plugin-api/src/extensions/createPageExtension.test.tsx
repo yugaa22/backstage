@@ -132,7 +132,9 @@ describe('createPageExtension', () => {
       inputs: {},
     });
 
-    renderWithEffects(wrapInTestApp(output.element as unknown as JSX.Element));
+    await renderWithEffects(
+      wrapInTestApp(output.element as unknown as JSX.Element),
+    );
 
     await waitFor(() =>
       expect(captureEvent).toHaveBeenCalledWith(
