@@ -140,6 +140,12 @@ describe('createApp', () => {
             ]
           </core.layout>
         ]
+        components [
+          <core.components.progress out=[component.ref] />
+          <core.components.errorBoundaryFallback out=[component.ref] />
+          <core.components.bootErrorPage out=[component.ref] />
+          <core.components.notFoundErrorPage out=[component.ref] />
+        ]
         themes [
           <themes.light out=[core.theme] />
           <themes.dark out=[core.theme] />
