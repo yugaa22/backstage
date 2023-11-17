@@ -51,6 +51,11 @@ export type ExtensionDataValues<TExtensionData extends AnyExtensionDataMap> = {
     : never]?: TExtensionData[DataName]['T'];
 };
 
+export type ExtensionInputValue<TExtensionData extends AnyExtensionDataMap> = {
+  extensionId: string;
+  output: ExtensionDataValues<TExtensionData>;
+};
+
 /**
  * Converts an extension input map into the matching concrete input values type.
  * @public
@@ -59,11 +64,11 @@ export type ExtensionInputValues<
   TInputs extends { [name in string]: ExtensionInput<any, any> },
 > = {
   [InputName in keyof TInputs]: false extends TInputs[InputName]['config']['singleton']
-    ? Array<Expand<ExtensionDataValues<TInputs[InputName]['extensionData']>>>
+    ? Array<Expand<ExtensionInputValue<TInputs[InputName]['extensionData']>>>
     : false extends TInputs[InputName]['config']['optional']
-    ? Expand<ExtensionDataValues<TInputs[InputName]['extensionData']>>
+    ? Expand<ExtensionInputValue<TInputs[InputName]['extensionData']>>
     : Expand<
-        ExtensionDataValues<TInputs[InputName]['extensionData']> | undefined
+        ExtensionInputValue<TInputs[InputName]['extensionData']> | undefined
       >;
 };
 

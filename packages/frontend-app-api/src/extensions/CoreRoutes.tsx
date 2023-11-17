@@ -39,8 +39,8 @@ export const CoreRoutes = createExtension({
     const Routes = () => {
       const element = useRoutes(
         inputs.routes.map(route => ({
-          path: `${route.path}/*`,
-          element: route.element,
+          path: `${route.output.path}/*`,
+          element: route.output.element,
         })),
       );
 
